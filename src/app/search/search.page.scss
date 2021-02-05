@@ -1,0 +1,59 @@
+ion-content{
+    --ion-background-color: #CEF0EA;
+  }
+
+
+
+// SEARCHBAR
+.sc-ion-searchbar-md-h{
+    --background: #5CCFBB;
+    font-size: 16px;
+    --webkit-border-radius: 25px 25px 25px 25px;
+    --border-radius: 25px 25px 25px 25px;
+    margin-top: 20px;
+    max-width: 500px;
+    margin: 10px auto;
+    display: block;
+  }
+
+
+
+// Gestion des carrés catégories
+
+a{
+    text-decoration: none;
+}
+
+.scrolling-wrapper{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+
+}
+
+.card {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    margin: 25px;
+    background:  #8CDDCF;
+    color:black;
+    text-align: center;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+  // FOOTER
+
+.ion-no-border{
+    text-align: center;
+  }
+  
+  .footer img{
+    margin-left: 20px;
+    margin-right: 20px;
+  }

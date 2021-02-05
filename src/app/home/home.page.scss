@@ -1,27 +1,97 @@
-#container {
+
+ion-content{
+  --ion-background-color: #CEF0EA;
+}
+
+
+
+// SEARCHBAR
+.sc-ion-searchbar-md-h{
+  --background: #5CCFBB;
+  font-size: 16px;
+  --webkit-border-radius: 25px 25px 25px 25px;
+  --border-radius: 25px 25px 25px 25px;
+  margin-top: 20px;
+  max-width: 500px;
+  margin: 10px auto;
+  display: block;
+}
+
+// LOGO
+
+.brox{
+  text-align: center;
+  display: inline-block;
+  width: 90%;
+  height: 100px;
+  background-color:#5CCFBB;
+  background-image: url('/assets/img/logos/logo-black-text.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 30px auto;
+  display: block;
+  max-width: 800px;
+}
+
+h1{
+  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-left: 5%;
+}
+
+
+// CATEGORIES
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  
+  .card {
+    display: inline-block;
+  }
+}
+
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  
+  .card {
+    flex: auto auto auto;
+    margin-right: 3px;
+  }
+}
+
+.card {
+  width: 150px;
+  height: 150px;
+  background:  #8CDDCF;
+  margin-right: 30px;
+  margin-left: 10px;
+  margin-bottom: 10px;
   text-align: center;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.scrolling-wrapper, .scrolling-wrapper-flexbox {
+  height: auto;
+  width: auto;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
 
-  color: #8c8c8c;
 
-  margin: 0;
+// FOOTER
+
+.ion-no-border{
+  text-align: center;
 }
 
-#container a {
-  text-decoration: none;
+.footer img{
+  margin-left: 20px;
+  margin-right: 20px;
 }

@@ -1,20 +1,77 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+<!-- SEARCH BAR -->
+  <ion-toolbar>
+    <ion-searchbar placeholder="Recherche"></ion-searchbar>
+  </ion-toolbar>
+
+<!-- LOGO -->
+  <div class="brox"></div>
+
+
+<!-- Liste des catégories ( for each à faire quand table + requête ok ) -->
+
+<div>
+  <h1>Catégories</h1>
+</div>
+
+<div class="scrolling-wrapper">
+  <a href=""><div class="card"><h2>Catégorie</h2></div></a>
+  <div class="card"><h2>Catégorie</h2></div>
+  <div class="card"><h2>Catégorie</h2></div>
+  <div class="card"><h2>Catégorie</h2></div>
+  <div class="card"><h2>Catégorie</h2></div>
+  <div class="card"><h2>Catégorie</h2></div>
+  <div class="card"><h2>Catégorie</h2></div>
+  <div class="card"><h2>Catégorie</h2></div>
+  <div class="card"><h2>Catégorie</h2></div>
+</div>
+
+
+<!-- Liste des derniers produits ( for each à faire quand table + requête ok ) -->
+<div>
+  <h1>Nouveaux produits</h1>
+</div>
+
+<div class="scrolling-wrapper">
+  <a href=""><div class="card"><h2>Produit</h2></div></a>
+  <div class="card"><h2>Produit</h2></div>
+  <div class="card"><h2>Produit</h2></div>
+  <div class="card"><h2>Produit</h2></div>
+  <div class="card"><h2>Produit</h2></div>
+  <div class="card"><h2>Produit</h2></div>
+  <div class="card"><h2>Produit</h2></div>
+  <div class="card"><h2>Produit</h2></div>
+  <div class="card"><h2>Produit</h2></div>
+</div>
+
+<!-- Liste des produits recommandés ? ( for each à faire quand table + requête ok ) -->
+<div>
+  <h1>Produits recommandés</h1>
+</div>
+
+<div class="scrolling-wrapper">
+  <a href=""><div class="card"><h2>Produit</h2></div></a>
+  <div class="card"><h2>Produit</h2></div>
+  <div class="card"><h2>Produit</h2></div>
+  <div class="card"><h2>Produit</h2></div>
+  <div class="card"><h2>Produit</h2></div>
+  <div class="card"><h2>Produit</h2></div>
+  <div class="card"><h2>Produit</h2></div>
+  <div class="card"><h2>Produit</h2></div>
+  <div class="card"><h2>Produit</h2></div>
+</div>
+
 </ion-content>
+
+<!-- Footer sans bordures -->
+<ion-footer class="ion-no-border footer">
+  <ion-toolbar>
+      <a href=""><img src="assets/icon/home-solid.svg" alt="home" width="25px"></a>
+      <img src="assets/icon/search-solid.svg" alt="home" width="25px">
+      <img src="assets/icon/shopping-basket-solid.svg" alt="home" width="25px">
+      <img src="assets/icon/file-invoice-dollar-solid.svg" alt="home" width="25px">
+      <img src="assets/icon/user-regular.svg" alt="home" width="25px">
+  </ion-toolbar>
+</ion-footer>
