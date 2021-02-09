@@ -15,7 +15,6 @@ public class UserType {
     @JoinColumn(name = "user_id")
     private User user;
 
-
     @Column(name = "name")
     private String name;
 
@@ -28,8 +27,6 @@ public class UserType {
         this.user = user;
         this.name = name;
     }
-
-
 
     public Integer getId() {
         return id;

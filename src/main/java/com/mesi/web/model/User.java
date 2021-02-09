@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -16,6 +17,15 @@ public class User {
 
     @OneToOne(fetch = FetchType.LAZY)
     private UserType userType;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Address> addresses;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Product> products;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Purchase> purchases;
 
     @Column(name = "first_name")
     private String firstName;
@@ -45,9 +55,12 @@ public class User {
 
     }
 
-    public User(Integer id, UserType userType, String firstName, String lastName, String email, Integer passwordHash, String phoneNumber, Integer profilePicture, Date creationDate, Date modificationDate) {
+    public User(Integer id, UserType userType, List<Address> addresses, List<Product> products, List<Purchase> purchases, String firstName, String lastName, String email, Integer passwordHash, String phoneNumber, Integer profilePicture, Date creationDate, Date modificationDate) {
         this.id = id;
         this.userType = userType;
+        this.addresses = addresses;
+        this.products = products;
+        this.purchases = purchases;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -72,6 +85,30 @@ public class User {
 
     public void setUserType(UserType userType) {
         this.userType = userType;
+    }
+
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+    public List<Purchase> getPurchases() {
+        return purchases;
+    }
+
+    public void setPurchases(List<Purchase> purchases) {
+        this.purchases = purchases;
     }
 
     public String getFirstName() {
