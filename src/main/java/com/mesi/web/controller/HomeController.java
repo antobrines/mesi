@@ -9,6 +9,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,24 +34,20 @@ public class HomeController {
 
     @PostMapping("/authenticate")
     public JwtResponse authenticate(@RequestBody JwtRequest jwtRequest) throws Exception {
-        try {
-            authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(
-                            jwtRequest.getUsername(),
-                            jwtRequest.getPassword()
-                    )
-            );
-        } catch (BadCredentialsException e){
-            throw new Exception("INVALID_CREDENTIALS", e);
+
+        UserDetails user = userService.loadUserByUsername(jwtRequest.getUsername());
+
+        if(BCrypt.checkpw(jwtRequest.getPassword(), user.getPassword())){
+            final UserDetails userDetails
+                    = userService.loadUserByUsername(jwtRequest.getUsername());
+
+            final String token
+                    = jwtUtility.generateToken(userDetails);
+
+            return new JwtResponse(token);
+
+        }else {
+            throw new Exception("invalid credential");
         }
-
-        final UserDetails userDetails
-                = userService.loadUserByUsername(jwtRequest.getUsername());
-
-        final String token
-                = jwtUtility.generateToken(userDetails);
-
-        return new JwtResponse(token);
-
     }
 }

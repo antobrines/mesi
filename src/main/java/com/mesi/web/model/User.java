@@ -15,17 +15,7 @@ public class User {
     @Column(name = "user_id")
     private Integer id;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    private UserType userType;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<Address> addresses;
-
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<Product> products;
-
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<Purchase> purchases;
 
     @Column(name = "first_name")
     private String firstName;
@@ -36,13 +26,13 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "passwordHash")
-    private Integer passwordHash;
+    @Column(name = "password_hash")
+    private String passwordHash;
 
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "profile_pricture")
+    @Column(name = "profile_picture")
     private Integer profilePicture;
 
     @Column(name = "creation_date")
@@ -55,12 +45,8 @@ public class User {
 
     }
 
-    public User(Integer id, UserType userType, List<Address> addresses, List<Product> products, List<Purchase> purchases, String firstName, String lastName, String email, Integer passwordHash, String phoneNumber, Integer profilePicture, Date creationDate, Date modificationDate) {
+    public User(Integer id, String firstName, String lastName, String email, String passwordHash, String phoneNumber, Integer profilePicture, Date creationDate, Date modificationDate) {
         this.id = id;
-        this.userType = userType;
-        this.addresses = addresses;
-        this.products = products;
-        this.purchases = purchases;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -77,38 +63,6 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public UserType getUserType() {
-        return userType;
-    }
-
-    public void setUserType(UserType userType) {
-        this.userType = userType;
-    }
-
-    public List<Address> getAddresses() {
-        return addresses;
-    }
-
-    public void setAddresses(List<Address> addresses) {
-        this.addresses = addresses;
-    }
-
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
-
-    public List<Purchase> getPurchases() {
-        return purchases;
-    }
-
-    public void setPurchases(List<Purchase> purchases) {
-        this.purchases = purchases;
     }
 
     public String getFirstName() {
@@ -135,11 +89,11 @@ public class User {
         this.email = email;
     }
 
-    public Integer getPasswordHash() {
+    public String getPasswordHash() {
         return passwordHash;
     }
 
-    public void setPasswordHash(Integer passwordHash) {
+    public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
     }
 
@@ -173,5 +127,21 @@ public class User {
 
     public void setModificationDate(Date modificationDate) {
         this.modificationDate = modificationDate;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("User{");
+        sb.append("id=").append(id);
+        sb.append(", password='").append(passwordHash).append('\'');
+        sb.append(", firstName='").append(firstName).append('\'');
+        sb.append(", lastName='").append(lastName).append('\'');
+        sb.append(", email='").append(email).append('\'');
+        sb.append(", phoneNumber='").append(phoneNumber).append('\'');
+        sb.append(", profilePicture=").append(profilePicture);
+        sb.append(", creationDate=").append(creationDate);
+        sb.append(", modificationDate=").append(modificationDate);
+        sb.append('}');
+        return sb.toString();
     }
 }
