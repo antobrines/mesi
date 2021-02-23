@@ -38,14 +38,19 @@ h1{
   margin-bottom: 30px;
   margin-top: 30px;
   margin-left: 5%;
+  color: black;
 }
 
+h2{
+  color: black;
+}
 
 // CATEGORIES
 .scrolling-wrapper {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+  flex-wrap: nowrap;
   
   .card {
     display: inline-block;
@@ -82,7 +87,6 @@ h1{
     display: none;
   }
 }
-
 
 
 // FOOTER
