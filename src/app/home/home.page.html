@@ -1,42 +1,40 @@
 <ion-content [fullscreen]="true">
 
 
-<!-- SEARCH BAR -->
-  <ion-toolbar>
+<!-- SEARCH BAR MOBILE-->
+  <ion-toolbar class="ion-hide-md-up">
     <ion-searchbar placeholder="Recherche"></ion-searchbar>
   </ion-toolbar>
+  
+  <!-- SEARCH BAR DESKTOP-->
+  <ion-toolbar class="ion-hide-md-down">
+    <ion-buttons slot="secondary">
+      <!-- Le lien peut être mis directement de cette façon ( à modifier lorqu'on aura la page profil ) -->
+      <ion-button color="dark" href="/registration">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title><img class="brox-little" src="/assets/img/logos/logo-black-text.png" alt="Categories"></ion-title>
+  </ion-toolbar>
 
-<!-- LOGO -->
-  <div class="brox"></div>
-
-
-<!-- Liste des catégories ( for each à faire quand table + requête ok ) -->
-
-<ion-grid>
-  <ion-row class="scrolling-wrapper">
-    <ion-col col-3 class="">
-      <div class="card"><h2>Catégorie</h2></div>
-    </ion-col>
-    <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
-    </ion-col>
-    <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
-    </ion-col>
-    <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
-    </ion-col>
-    <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
-    </ion-col>
-    <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
-    </ion-col>
-    <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+<!-- LOGO MOBILE-->
+<ion-grid class="ion-hide-md-up">
+  <ion-row>
+    <ion-col>
+      <div class="brox"></div>
     </ion-col>
   </ion-row>
 </ion-grid>
+
+<!-- Liste des catégories ( for each à faire quand table + requête ok ) -->
 
 <div>
   <h1>Catégories</h1>
@@ -44,25 +42,25 @@
 <ion-grid>
   <ion-row class="scrolling-wrapper">
     <ion-col col-3 class="">
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
   </ion-row>
 </ion-grid>
@@ -74,25 +72,25 @@
 <ion-grid>
   <ion-row class="scrolling-wrapper">
     <ion-col col-3 class="">
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
   </ion-row>
 </ion-grid>
@@ -104,39 +102,38 @@
 <ion-grid>
   <ion-row class="scrolling-wrapper">
     <ion-col col-3 class="">
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
     <ion-col col-3>
-      <div class="card"><h2>Catégorie</h2></div>
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
     </ion-col>
   </ion-row>
 </ion-grid>
 
-
 </ion-content>
 
-<!-- Footer sans bordures -->
-<ion-footer class="ion-no-border footer">
-  <ion-toolbar>
-      <a href=""><img src="assets/icon/home-solid.svg" alt="home" width="25px"></a>
-      <img src="assets/icon/search-solid.svg" alt="home" width="25px">
-      <img src="assets/icon/shopping-basket-solid.svg" alt="home" width="25px">
-      <img src="assets/icon/file-invoice-dollar-solid.svg" alt="home" width="25px">
-      <img src="assets/icon/user-regular.svg" alt="home" width="25px">
-  </ion-toolbar>
-</ion-footer>
+  <!-- Footer sans bordures -->
+  <ion-footer class="ion-no-border footer ion-hide-md-up">
+    <ion-toolbar>
+        <a href=""><img src="assets/icon/home-solid.svg" alt="home" width="25px"></a>
+        <img src="assets/icon/search-solid.svg" alt="home" width="25px">
+        <img src="assets/icon/shopping-basket-solid.svg" alt="home" width="25px">
+        <img src="assets/icon/file-invoice-dollar-solid.svg" alt="home" width="25px">
+        <img src="assets/icon/user-regular.svg" alt="home" width="25px">
+    </ion-toolbar>
+  </ion-footer>
