@@ -1,37 +1,75 @@
 <ion-content>
 
-  <!-- SEARCH BAR -->
-  <ion-toolbar>
+  <!-- SEARCH BAR MOBILE-->
+  <ion-toolbar class="ion-hide-md-up">
     <ion-searchbar placeholder="Recherche"></ion-searchbar>
   </ion-toolbar>
-
-
-
+  
+  <!-- SEARCH BAR DESKTOP-->
+  <ion-toolbar class="ion-hide-md-down">
+    <ion-buttons slot="secondary">
+      <!-- Le lien peut être mis directement de cette façon ( à modifier lorqu'on aura la page profil ) -->
+      <ion-button color="dark" href="/registration">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title><img class="brox-little" src="/assets/img/logos/logo-black-text.png" alt="Categories"></ion-title>
+  </ion-toolbar>
 
 <!-- Carrés catégories -->
 
-<div class="scrolling-wrapper">
-  <a href=""><div class="card"><h3>Catégorie</h3></div></a>
-  <a href=""><div class="card"><h3>Catégorie</h3></div></a>
-  <a href=""><div class="card"><h3>Catégorie</h3></div></a>
-  <a href=""><div class="card"><h3>Catégorie</h3></div></a>
-  <a href=""><div class="card"><h3>Catégorie</h3></div></a>
-  <a href=""><div class="card"><h3>Catégorie</h3></div></a>
-  <a href=""><div class="card"><h3>Catégorie</h3></div></a>
-  <a href=""><div class="card"><h3>Catégorie</h3></div></a>
-  <a href=""><div class="card"><h3>Catégorie</h3></div></a>
-  <a href=""><div class="card"><h3>Catégorie</h3></div></a>
-</div>
+
+<ion-grid>
+  <ion-row class="">
+    <ion-col size="6" size-md="3">
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
+    </ion-col>
+    <ion-col size="6" size-md="3">
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
+    </ion-col>
+    <ion-col size="6" size-md="3">
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
+    </ion-col>
+    <ion-col size="6" size-md="3">
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
+    </ion-col>
+    <ion-col size="6" size-md="3">
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
+    </ion-col>
+    <ion-col size="6" size-md="3">
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
+    </ion-col>
+    <ion-col size="6" size-md="3">
+      <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
 
 </ion-content>
 
-<!-- Footer sans bordures -->
-<ion-footer class="ion-no-border footer">
-  <ion-toolbar>
-      <a href=""><img src="assets/icon/home-solid.svg" alt="home" width="25px"></a>
-      <img src="assets/icon/search-solid.svg" alt="home" width="25px">
-      <img src="assets/icon/shopping-basket-solid.svg" alt="home" width="25px">
-      <img src="assets/icon/file-invoice-dollar-solid.svg" alt="home" width="25px">
-      <img src="assets/icon/user-regular.svg" alt="home" width="25px">
-  </ion-toolbar>
-</ion-footer>
+  <!-- Footer sans bordures Mobile -->
+  <ion-footer class="ion-no-border footer ion-hide-md-up">
+    <ion-toolbar>
+        <a href=""><img src="assets/icon/home-solid.svg" alt="home" width="25px"></a>
+        <img src="assets/icon/search-solid.svg" alt="home" width="25px">
+        <img src="assets/icon/shopping-basket-solid.svg" alt="home" width="25px">
+        <img src="assets/icon/file-invoice-dollar-solid.svg" alt="home" width="25px">
+        <img src="assets/icon/user-regular.svg" alt="home" width="25px">
+    </ion-toolbar>
+  </ion-footer>
+
+  <!-- Footer sans bordures Desktop -->
+  <ion-footer class="ion-no-border footer ion-hide-md-down">
+    <ion-toolbar>
+      <h6>Brox - Tous droits réservés ®</h6>
+    </ion-toolbar>
+  </ion-footer>

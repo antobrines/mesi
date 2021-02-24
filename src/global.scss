@@ -42,6 +42,35 @@ h2{
   color: black;
 }
 
+// SEARCHBAR
+.sc-ion-searchbar-md-h{
+  --background: #CEF0EA;
+  font-size: 16px;
+  --webkit-border-radius: 25px 25px 25px 25px;
+  --border-radius: 25px 25px 25px 25px;
+  margin-top: 20px;
+  max-width: 500px;
+  margin: 10px auto;
+  display: block;
+}
+
+// LOGO
+  
+.brox{
+  width: 100%;
+  min-height: 200px;
+  background-color:#5CCFBB;
+  background-image: url('/assets/img/logos/logo-black-text.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  }
+  
+.brox-little{
+  width: 200px;
+  height: auto;
+  }
+  
 // FOOTER
 .ion-no-border{
   text-align: center;
