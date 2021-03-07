@@ -18,28 +18,36 @@ ion-grid {
 	height: 20vh;
 }
 
-.purchase {
+.product {
     background-color: #5CCFBB;
-    padding: 50px 20px;
+    padding: 10px;
+}
+
+.quantity {
     display: flex;
     justify-content: center;
 }
 
-.detail-purchase {
-    display: flex;
-    justify-content: center;
+ion-item {
+    width: 80px;
+    text-align: center;
+    color: black;
+    --padding-end: 0px;
+    --inner-padding-end: 0px;
+    --ion-item-background: transparent;
 }
 
-.detail-purchase a {
+a {
     background-color: #5CCFBB;
     text-decoration: none;
     color: black;
     padding: 10px 20px;
     border-radius: 5px;
+    margin-top: 60px;
     transition: 0.5s;
 }
 
-.detail-purchase a:hover {
+a:hover {
     background-color: black;
     color: #5CCFBB;
 }
