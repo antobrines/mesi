@@ -1,0 +1,94 @@
+const btnCreate = document.querySelector('#btnCreate');
+
+const todosList = document.querySelector('#todosList');
+const inputTodo = document.querySelector('#inputTodo');
+
+
+btnCreate.addEventListener('click', 
+(evt) => {
+    
+    console.log(inputTodo.value);
+    let liste = document.createElement('li');
+    liste.innerHTML = inputTodo.value;
+    liste.className='Left';
+    todosList.appendChild(liste);
+    
+    
+
+    let deleteLi = document.createElement('button');
+    deleteLi.innerHTML = "Supprimer";
+    liste.appendChild(deleteLi);
+    deleteLi.addEventListener ('click',
+        (evt) => 
+        {
+            todosList.removeChild(liste);
+            nbLeft();
+        }
+    )
+
+    let btnDone = document.createElement('button');
+    btnDone.innerHTML = "Fait";
+    liste.appendChild(btnDone);
+    btnDone.addEventListener ('click',
+        (evt) => 
+        {
+            
+            if (liste.style.color === 'lightgrey')
+            {
+                liste.style.color = 'black';
+                btnDone.innerHTML='Fait';
+                liste.className='Left';
+            }
+
+            else 
+            {
+                liste.style.color = 'lightgrey';
+                btnDone.innerHTML="Pas Fait";
+                liste.className='Done';
+            }
+
+            nbLeft();
+        }
+    )
+    nbLeft();
+    }
+)
+; 
+
+
+function nbLeft ()
+{
+
+const paragrapheFait = document.querySelector('.NombreTâchesFaites');
+const paragrapheAFaire = document.querySelector('.NombreTâchesAFaire');
+const nbLeft = document.querySelectorAll('.Left');
+const nbDone = document.querySelectorAll('.Done');
+
+paragrapheFait.innerHTML = 'fait ' + nbDone.length;
+paragrapheAFaire.innerHTML = 'pas fait ' + nbLeft.length;
+} 
+
+
+function deleteListe ()
+{
+    const deleteListe = document.querySelector('.DeleteListe');
+    const nbDone = document.getElementsByClassName('Done');
+    deleteListe.addEventListener ('click',
+    (evt) => 
+    {
+        console.log(nbDone)
+        document.removeChild(nbDone);
+        nbLeft();
+    }
+)
+    document.removeChild(nbDone);
+}
+
+
+function Filtre ()
+{
+
+}
+
+
+

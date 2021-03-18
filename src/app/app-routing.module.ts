@@ -22,7 +22,8 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
-  },  {
+  },
+  {
     path: 'purchases',
     loadChildren: () => import('./purchases/purchases/purchases.module').then( m => m.PurchasesPageModule)
   },
@@ -33,7 +34,20 @@ const routes: Routes = [
   {
     path: 'account',
     loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  },
+  {
+    path: 'profile/menu',
+    loadChildren: () => import('./profile/menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'profile/informations',
+    loadChildren: () => import('./profile/informations/informations.module').then( m => m.InformationsPageModule)
   }
+
 
 ];
 

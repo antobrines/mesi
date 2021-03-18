@@ -1,0 +1,35 @@
+ion-content, ion-grid {
+    --ion-background-color: #CEF0EA;
+    color: black;
+}
+
+ion-grid {
+    padding: 40px 20px;
+}
+
+.banniere {
+    background-color: #5CCFBB;
+    color: black;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	height: 20vh;
+}
+
+.access-info {
+    background-color: #5CCFBB;
+    color: black;
+    padding: 5vh;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.5s;
+    font-size: larger;
+}
+
+.access-info:hover {
+    background-color: #39ace7;
+    color: black;
+}
