@@ -46,7 +46,17 @@ const routes: Routes = [
   {
     path: 'profile/informations',
     loadChildren: () => import('./profile/informations/informations.module').then( m => m.InformationsPageModule)
+  },
+  {
+    path: 'profile/change-password',
+    loadChildren: () => import('./profile/change-password/change-password.module').then( m => m.ChangePasswordPageModule)
+  },
+  {
+    path: 'profile/credit-card',
+    loadChildren: () => import('./profile/credit-card/credit-card.module').then( m => m.CreditCardPageModule)
   }
+
+
 
 
 ];
