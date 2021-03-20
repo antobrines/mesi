@@ -3,21 +3,21 @@
   <!-- Bannière -->
 
   <div class="banniere">
-    <h1>Modification du profil</h1>
+    <h1>Votre adresse</h1>
   </div>
 
   <div class="wrapper ">
     <div id="formContent">
 
-
+      <h1 class="title">Ajouter ou modifier votre adresse de livraison</h1>
       <!-- Modifier ses infos Form -->
       <form>
-        <input type="text" id="nom"  name="nom" placeholder="Nom" #lastname>
-        <input type="text" id="prenom"  name="prenom" placeholder="Prénom" #firstname>
-        <input type="email" id="email"  name="email" placeholder="Email" #mail>
-        <input type="text" id="telephone"  name="telephone" placeholder="Téléphone" #phone>
-        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" #picture>
-        <input type="submit"  value="Modifier" onclick="UpdateProfile(lastname.value,firstname.value,mail.value,phone.value,picture.value)">
+        <input type="text" id="rue"  name="rue" placeholder="Rue" #rue>
+        <input type="text" id="ville"  name="ville" placeholder="Ville" #ville>
+        <input type="text" id="codepostal"  name="codepostal" placeholder="Code postal" #codepostal>
+        <input type="text" id="pays"  name="pays" placeholder="Pays" #pays>
+        <input type="text" id="adressetype" name="adressetype" placeholder="Type d'adresse" #adressetype>
+        <input type="submit"  value="Modifier" onclick="AddAdress(rue.value,ville.value,codepostal.value,pays.value,adressetype.value)">
       </form>
       
     </div>
