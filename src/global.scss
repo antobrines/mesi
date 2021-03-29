@@ -39,8 +39,18 @@
 
 // GÉNÉRAL
 
+h1{
+  font-size: 2.5vh;
+  font-weight: bold;
+}
+
 h2{
   color: black;
+}
+
+//NAVBAR
+.ion-hide-md-down{
+  border-bottom: #CEF0EA 2px solid ;
 }
 
 // SEARCHBAR

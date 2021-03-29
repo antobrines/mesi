@@ -1,0 +1,42 @@
+ion-content{
+    --ion-background-color: #CEF0EA;
+  }
+
+.banniere {
+    background-color: #5CCFBB;
+    color: black;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	height: 20vh;
+}
+
+/* BASIC */
+
+html {
+    background-color: #56baed;
+  }
+  
+body {
+    min-height: 100vh;
+}
+
+h2{
+    text-align: justify;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 2.5vh;
+    font-weight: bold;
+    margin-top: 5%;
+
+}
+
+p{
+    text-align: justify;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 2.5vh;
+}
+  

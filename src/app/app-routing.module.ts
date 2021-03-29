@@ -58,7 +58,12 @@ const routes: Routes = [
   {
     path: 'profile/adresses',
     loadChildren: () => import('./profile/adresses/adresses.module').then( m => m.AdressesPageModule)
+  },
+  {
+    path: 'profile/help',
+    loadChildren: () => import('./profile/help/help.module').then( m => m.HelpPageModule)
   }
+
 
 
 
