@@ -60,6 +60,14 @@ const routes: Routes = [
     loadChildren: () => import('./profile/adresses/adresses.module').then( m => m.AdressesPageModule)
   },
   {
+    path: 'chat-list',
+    loadChildren: () => import('./messages/chat-list/chat-list.module').then( m => m.ChatListPageModule)
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./messages/chat/chat.module').then( m => m.ChatPageModule)
+  },
+  {
     path: 'profile/help',
     loadChildren: () => import('./profile/help/help.module').then( m => m.HelpPageModule)
   }
