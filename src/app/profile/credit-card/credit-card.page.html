@@ -1,9 +1,27 @@
 <ion-content [fullscreen]="true">
+    <!-- SEARCH BAR DESKTOP-->
+    <ion-toolbar class="ion-hide-md-down">
+      <ion-buttons slot="secondary">
+        <ion-button color="dark" href="/profile/menu">
+          <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+        </ion-button>
+        <ion-button color="dark">
+          <ion-icon slot="icon-only" name="search"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="primary">
+        <ion-button color="dark">
+          <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title><img class="brox-little" src="/assets/img/logos/logo-black-text.png" alt="Categories"></ion-title>
+    </ion-toolbar>
+    <!-- Bannière -->
 
   <!-- Bannière -->
 
   <div class="banniere">
-    <h1>Moyen de paiement</h1>
+    <h1>Moyens de paiement</h1>
   </div>
 
   <div class="wrapper ">
@@ -13,13 +31,13 @@
 
       <!-- liste des cartes de crédit enregistrées -->
       <ul>
-        <li><img src="assets/img/icon/visa.png" alt="card"> 1234 5896 4789 ***** <a href=""> <img src="assets/img/icon/modify.png" alt="modify"></a> <a href=""><img src="assets/img/icon/bin.png" alt="bin"></a></li>
-        <li><img src="assets/img/icon/visa.png" alt="card"> 1234 5896 4789 ***** <a href=""> <img src="assets/img/icon/modify.png" alt="modify"></a> <a href=""><img src="assets/img/icon/bin.png" alt="bin"></a></li>
-        <li><img src="assets/img/icon/visa.png" alt="card"> 1234 5896 4789 ***** <a href=""> <img src="assets/img/icon/modify.png" alt="modify"></a> <a href=""><img src="assets/img/icon/bin.png" alt="bin"></a></li>
+        <li><img src="assets/img/icon/visa.png" alt="card"> 1234 5896 4789 ***** <a href="profile/edit-card"> <img src="assets/img/icon/modify.png" alt="modify"></a> <a href="profile/delete-card"><img src="assets/img/icon/bin.png" alt="bin"></a></li>
+        <li><img src="assets/img/icon/visa.png" alt="card"> 1234 5896 4789 ***** <a href="profile/edit-card"> <img src="assets/img/icon/modify.png" alt="modify"></a> <a href="profile/delete-card"><img src="assets/img/icon/bin.png" alt="bin"></a></li>
+        <li><img src="assets/img/icon/visa.png" alt="card"> 1234 5896 4789 ***** <a href="profile/edit-card"> <img src="assets/img/icon/modify.png" alt="modify"></a> <a href="profile/delete-card"><img src="assets/img/icon/bin.png" alt="bin"></a></li>
       </ul>
     </div>
   </div>
-  <a class="add-card"  href="" >Ajouter une carte</a>
+  <a class="add-card"  href="profile/add-card" >Ajouter une carte</a>
   </ion-content>
 
     <!-- Footer avec bordure Mobile -->

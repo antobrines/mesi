@@ -70,7 +70,22 @@ const routes: Routes = [
   {
     path: 'profile/help',
     loadChildren: () => import('./profile/help/help.module').then( m => m.HelpPageModule)
+  },
+  {
+    path: 'profile/add-card',
+    loadChildren: () => import('./profile/add-card/add-card.module').then( m => m.AddCardPageModule)
+  },
+  {
+    path: 'profile/edit-card',
+    loadChildren: () => import('./profile/edit-card/edit-card.module').then( m => m.EditCardPageModule)
+  },
+  {
+    path: 'profile/delete-card',
+    loadChildren: () => import('./profile/delete-card/delete-card.module').then( m => m.DeleteCardPageModule)
   }
+
+
+
 
 
 

@@ -1,0 +1,61 @@
+<ion-content [fullscreen]="true">
+  <!-- SEARCH BAR DESKTOP-->
+  <ion-toolbar class="ion-hide-md-down">
+    <ion-buttons slot="secondary">
+      <ion-button color="dark" href="/profile/menu">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title><img class="brox-little" src="/assets/img/logos/logo-black-text.png" alt="Categories"></ion-title>
+  </ion-toolbar>
+ 
+
+<!-- Bannière -->
+
+<div class="banniere">
+  <h1>Changer ce moyen de paiement</h1>
+</div>
+
+<div class="wrapper ">
+  <div id="formContent">
+
+    <h1 class="title">C'est ici pour modifier un moyen de paiement</h1>
+
+    <!-- chage password form -->
+    <form>
+      <input type="text" id="card-number"  name="card-number" placeholder="Numéro de carte" #cardnumber>
+      <input type="text" id="expiration-date"  name="expiration-date" placeholder="Date d'expiration" #expirationdate>
+      <input type="text" id="code-cvv"  name="code-cvv" placeholder="Code CVV" #codecvv>
+
+      <input type="submit"  value="Modifier la la carte" onclick="EditCard(cardnumber.value,expirationdate.value,codecvv.value)">
+    </form>
+    
+  </div>
+</div>
+</ion-content>
+
+  <!-- Footer avec bordure Mobile -->
+  <ion-footer class="ion-no-border footer ion-hide-md-up">
+    <ion-toolbar>
+        <a href=""><img src="assets/img/icon/home-solid.svg" alt="home" width="25px"></a>
+        <img src="assets/img/icon/search-solid.svg" alt="home" width="25px">
+        <img src="assets/img/icon/shopping-basket-solid.svg" alt="home" width="25px">
+        <img src="assets/img/icon/file-invoice-dollar-solid.svg" alt="home" width="25px">
+        <img src="assets/img/icon/user-regular.svg" alt="home" width="25px">
+    </ion-toolbar>
+  </ion-footer>
+
+  <!-- Footer avec bordure Desktop -->
+  <ion-footer class="ion-no-border footer ion-hide-md-down">
+    <ion-toolbar>
+      <h6>Brox - Tous droits réservés ®</h6>
+    </ion-toolbar>
+  </ion-footer>

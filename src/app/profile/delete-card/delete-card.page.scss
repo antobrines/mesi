@@ -1,0 +1,76 @@
+ion-content{
+    --ion-background-color: #CEF0EA;
+  }
+
+  .banniere {
+    background-color: #5CCFBB;
+    color: black;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	height: 20vh;
+}
+
+/* BASIC */
+
+html {
+  background-color: #56baed;
+}
+
+body {
+  height: 100vh;
+}
+
+p{
+    margin-bottom: 10vh;
+}
+
+a {
+  color: black;
+  display:inline-block;
+  text-decoration: none;
+  font-weight: 400;
+  
+}
+
+.title{
+   margin-bottom: 8vh; 
+}
+
+input[type=submit] {
+    background-color: #5CCFBB;
+}
+
+input[type=submit]:hover {
+    background-color: #39ace7;
+}
+
+/* STRUCTURE */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 60%;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+#formContent {
+
+  background:  #CEF0EA;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  text-align: center;
+}
+
+#inscription{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
