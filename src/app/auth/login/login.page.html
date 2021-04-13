@@ -8,24 +8,22 @@
     <div id="formContent">
 
       <!-- Login Form -->
-      <form>
-        <input type="text" id="login"  name="login" placeholder="Email">
-        <input type="text" id="password" name="login" placeholder="Mot de passe">
-        <input type="submit"  value="Connexion">
+      <form [formGroup]="form" (submit)="submit()">
+        <input type="text" id="login" name="login" placeholder="Email" formControlName="email">
+        <input type="password" id="password" name="login" placeholder="Mot de passe" formControlName="password">
+        <input type="submit" value="Connexion">
       </form>
-  
+
       <!-- Remind Password -->
       <div>
-        <a  href="/forgot-password">Mot de passe oublié?</a>
+        <a href="/forgot-password">Mot de passe oublié?</a>
       </div>
 
       <div id="inscription">
-        <a  href="/registration">Inscription</a>
+        <a href="/registration">Inscription</a>
       </div>
-  
+
     </div>
   </div>
 
 </ion-content>
-
-
