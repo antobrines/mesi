@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
       password: formData.password,
       grant_type: 'password',
       client_id: 2,
-      client_secret: 'na2VWDUzhgroJSCjaA95XqGnmpvykzx2sGJyUuyx',
+      client_secret: 'qUoMM8CnrX50nJ0KOnYoSXusQvaJCGk4Xk59y07t',
       scope: '*'
     };
 
