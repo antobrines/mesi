@@ -17,11 +17,11 @@ export class RegistrationPage implements OnInit{
   myForm: FormGroup;  
   ngOnInit() {
     this.myForm = this.formBuilder.group({
-      last_name:'',
-      first_name:'',
-      email:'',
-      password: ['', [Validators.required]],
-      password_confirmation: ['', [Validators.required]],
+      last_name:['', [Validators.required]],
+      first_name:['', [Validators.required]],
+      email:['', [Validators.required,Validators.email]],
+      password: ['', [Validators.required], Validators.minLength(6)],
+      password_confirmation: ['', [Validators.required],  Validators.minLength(6)],
       phone_number:'',
       profile_image: ['']
     }, { 
@@ -56,3 +56,4 @@ console.log(formData);
 }
 
 }
+
