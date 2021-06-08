@@ -6,14 +6,42 @@
       <h1>Inscription</h1>
 
       <!-- Login Form -->
-      <form>
-        <input type="text" id="nom"  name="nom" placeholder="Nom">
-        <input type="text" id="prenom"  name="prenom" placeholder="Prénom">
-        <input type="email" id="email"  name="email" placeholder="Email">
-        <input type="password" id="password"  name="password" placeholder="Mot de passe">
-        <input type="password" id="password"  name="password" placeholder="Confirmer le mot de passe">
-        <input type="text" id="telephone"  name="telephone" placeholder="Téléphone">
-        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+      <form [formGroup] = "myForm" (ngSubmit)="onSubmit()">
+        <input type="text" id="last_name"  name="last_name" placeholder="Nom*" formControlName="last_name">
+        <div *ngIf="f.last_name.touched && f.last_name.invalid" class="alert alert-danger">
+          <div *ngIf="f.last_name.errors.required">Votre nom doit être renseigné.</div>
+        </div>
+
+        <input type="text" id="first_name"  name="first_name" placeholder="Prénom*" formControlName="first_name">
+        <div *ngIf="f.first_name.touched && f.first_name.invalid" class="alert alert-danger">
+          <div *ngIf="f.first_name.errors.required">Votre prénom doit être renseigné.</div>
+        </div>
+
+        <input type="email" id="email"  name="email" placeholder="Courriel*" formControlName="email" ngModel email="true">
+        <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+          <div *ngIf="f.email.errors.required">Merci de renseigner votre adresse email.</div>
+          <div *ngIf="f.email.errors.email">Votre adresse email doit être valide.</div>
+        </div>
+
+        <input type="password" id="password"  name="password" placeholder="Mot de passe*" formControlName="password" minlength="6">
+        <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+          <div *ngIf="f.password.errors.required">Merci de renseigner un mot passe.</div>
+          <div *ngIf="f.password.errors.minlength">Votre mot de passe doit contenir 6 caractères minimum.</div>
+        </div>
+
+
+        <input name="password_confirmation" id="password_confirmation" type="password" placeholder="Confirmation du mot de passe*" formControlName="password_confirmation" minlength="6">
+        <div *ngIf="f.password_confirmation.touched && f.password_confirmation.invalid" class="alert alert-danger">
+            <div *ngIf="f.password_confirmation.errors.required">Merci de confirmer votre mot de passe</div>
+            <div *ngIf="f.password_confirmation.errors.confirmedValidator">Vos mots de passe doivent être identiques</div>
+            <div *ngIf="f.password_confirmation.errors.minlength">Votre mot de passe doit contenir 6 caractères minimum.</div>
+        </div>
+
+        <input type="text" id="phone_number"  name="phone_number" placeholder="Téléphone" formControlName="phone_number">
+        <input type="file" id="profile_image" name="profile_image"  accept="image/png, image/jpeg, image/jpg"(change)="onFileSelect($event)" />
+ 
+        <div>*Champs obligatoires</div>
+
         <input type="submit"  value="Je m'inscris">
       </form>
 
