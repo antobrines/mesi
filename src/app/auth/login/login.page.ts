@@ -22,7 +22,6 @@ export class LoginPage implements OnInit {
   }
 
   submit() {
-    console.log(this.form.getRawValue());
     const formData = this.form.getRawValue();
     this.authS.login(formData);
   }
