@@ -41,27 +41,15 @@
   </div>
   <ion-grid>
     <ion-row class="scrolling-wrapper">
-      <ion-col col-3 class="">
-        <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
+      <ion-col col-3 class="" *ngFor="let category of categories">
+        <div class="card">
+          <div class="square">
+            <img src="{{category.image}}" alt="Categories">
+          </div>
+          <p>{{category.name}}</p>
+        </div>
       </ion-col>
-      <ion-col col-3>
-        <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
-      </ion-col>
-      <ion-col col-3>
-        <div class="card"><img src="assets/img/categories/categories.jpg" alt="Categories"></div>
-      </ion-col>
+    
     </ion-row>
   </ion-grid>
 
@@ -72,7 +60,10 @@
   <ion-grid>
     <ion-row class="scrolling-wrapper">
       <ion-col col-3 class="" *ngFor="let product of products">
-        <div class="card"><img src="assets/img/categories/categories.jpg" alt="product.name">{{product.name}}</div>
+        <div class="card">
+          <img src="assets/img/categories/categories.jpg" alt="product.name">
+          <p>{{product.name}}</p>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
