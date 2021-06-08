@@ -15,7 +15,7 @@ export class AuthService {
       password: formData.password,
       grant_type: 'password',
       client_id: 2,
-      client_secret: 'na2VWDUzhgroJSCjaA95XqGnmpvykzx2sGJyUuyx',
+      client_secret: 'poBqa0j3VGl8zUygYaEyb67YcXj8dVS9a7T81CFI',
       scope: '*'
     };
     // Add .env later for client_secret
