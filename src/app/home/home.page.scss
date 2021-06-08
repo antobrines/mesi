@@ -1,9 +1,8 @@
-
-ion-content{
-  --ion-background-color: #CEF0EA;
+ion-content {
+  --ion-background-color: #cef0ea;
 }
 //GÉNÉRAL
-h1{
+h1 {
   margin-top: 20px;
   margin-left: 30px;
   color: black;
@@ -15,9 +14,11 @@ h1{
   overflow-y: hidden;
   white-space: nowrap;
   flex-wrap: nowrap;
-  
+
   .card {
     display: inline-block;
+    background: none;
+    border: none;
   }
 }
 
@@ -25,7 +26,7 @@ h1{
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  
+
   .card {
     flex: auto auto auto;
     margin-right: 3px;
@@ -39,14 +40,21 @@ h1{
   margin-left: 10px;
   margin-bottom: 10px;
   text-align: center;
-
 }
 
-.scrolling-wrapper, .scrolling-wrapper-flexbox {
+.scrolling-wrapper,
+.scrolling-wrapper-flexbox {
   height: auto;
   width: auto;
   -webkit-overflow-scrolling: touch;
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.square {
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  overflow: hidden;
 }

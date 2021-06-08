@@ -9,15 +9,23 @@ import { HttpClient } from '@angular/common/http';
 export class HomePage implements OnInit {
 
   public products = null;
+  public categories = null;
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getProducts();
+    this.getCategories();
   }
 
   getProducts() {
-    this.http.get('http://127.0.0.1:8000/products').subscribe((datas) => {
+    this.http.get('http://mesiback/products').subscribe((datas: any) => {
       this.products = datas.data.data;
+    });
+  }
+
+  getCategories() {
+    this.http.get('http://mesiback/categories').subscribe((datas: any) => {
+      this.categories = datas.data.data;
     });
   }
 
