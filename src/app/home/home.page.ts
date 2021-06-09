@@ -18,13 +18,13 @@ export class HomePage implements OnInit {
   }
 
   getProducts() {
-    this.http.get('http://mesiback/products').subscribe((datas: any) => {
+    this.http.get('http://127.0.0.1:8000/products').subscribe((datas: any) => {
       this.products = datas.data.data;
     });
   }
 
   getCategories() {
-    this.http.get('http://mesiback/categories').subscribe((datas: any) => {
+    this.http.get('http://127.0.0.1:8000/categories').subscribe((datas: any) => {
       this.categories = datas.data.data;
     });
   }
