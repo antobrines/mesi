@@ -29,5 +29,5 @@ npm-debug.log*
 /platforms
 /plugins
 /www
-/src/app/auth/login/login.page.ts
 
+src/app/auth/login/login.page.ts
