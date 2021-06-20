@@ -12,7 +12,7 @@ import { ConfirmedValidator } from './confirmed.validator';
 })
 export class RegistrationPage implements OnInit{
 
-  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) { }
+  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private router: Router) {}
 
   myForm: FormGroup;  
   ngOnInit() {
@@ -50,10 +50,16 @@ onSubmit() {
   formData.append('profile_image', this.myForm.get('profile_image').value);
 console.log(formData);
   this.httpClient.post<any>('http://127.0.0.1:8000/new/user', formData).subscribe(
-    (res) => console.log(res),
-    (err) => console.log(err)
+    (result: any) => {
+
+      this.router.navigate(['/login']);
+    },
+    error => {
+      (err) => console.log(err)
+    }
   );
+  }
 }
 
-}
+
 
