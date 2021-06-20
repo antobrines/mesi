@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true">
+
+  <!-- Bannière -->
+
+  <div class="banniere">
+    <h1>Mes tickets</h1>
+  </div>
+
+  <!-- Liste des tickets -->
+
+  <ion-grid [fixed]="true">
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col class="ticket" size="12">
+        <a href="/ticket">
+          <div>
+            <b>Ticket n°xxx</b>
+            <p>Début message xxx</p>
+            <small>20/06/2021</small>
+          </div>
+        </a>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <a class="button" href="/new-ticket">Nouveau ticket</a>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+    <!-- Footer avec bordure Mobile -->
+    <ion-footer class="ion-no-border footer ion-hide-md-up">
+      <ion-toolbar>
+          <a href=""><img src="assets/img/icon/home-solid.svg" alt="home" width="25px"></a>
+          <img src="assets/img/icon/search-solid.svg" alt="home" width="25px">
+          <img src="assets/img/icon/shopping-basket-solid.svg" alt="home" width="25px">
+          <img src="assets/img/icon/file-invoice-dollar-solid.svg" alt="home" width="25px">
+          <img src="assets/img/icon/user-regular.svg" alt="home" width="25px">
+      </ion-toolbar>
+    </ion-footer>
+  
+    <!-- Footer avec bordure Desktop -->
+    <ion-footer class="ion-no-border footer ion-hide-md-down">
+      <ion-toolbar>
+        <h6>Brox - Tous droits réservés ®</h6>
+      </ion-toolbar>
+    </ion-footer>

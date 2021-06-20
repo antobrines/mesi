@@ -1,0 +1,66 @@
+<ion-content [fullscreen]="true">
+
+  <!-- Bannière -->
+
+  <div class="banniere">
+    <h1>Ticket n°xxx</h1>
+  </div>
+
+  <!-- Chat ticket -->
+
+  <ion-grid [fixed]="true" class="chat">
+
+    <ion-row class="ion-justify-content-end ion-align-items-center">
+      <ion-col size="10">
+        <div class="ticket request">
+          <b>Mon message : </b>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan scelerisque sem nec elementum. Donec semper libero finibus leo efficitur.</p>
+          <small>20/06/2021</small>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-start ion-align-items-center">
+      <ion-col size="10">
+        <div class="ticket">
+          <b>Réponse : </b>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan scelerisque sem nec elementum. Donec semper libero finibus leo efficitur.</p>
+          <small>20/06/2021</small>
+        </div>
+      </ion-col>
+    </ion-row>
+
+</ion-grid>
+
+<!-- Envoyer Message -->
+
+<ion-grid [fixed]="true" class="send-message">
+  <ion-row class="ion-justify-content-between ion-align-items-center">
+    <ion-col size="10">
+      <ion-input placeholder="Ecrire un message"></ion-input>
+    </ion-col>
+    <ion-col size="2">
+      <ion-icon name="send"></ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>
+
+    <!-- Footer avec bordure Mobile -->
+    <ion-footer class="ion-no-border footer ion-hide-md-up">
+      <ion-toolbar>
+          <a href=""><img src="assets/img/icon/home-solid.svg" alt="home" width="25px"></a>
+          <img src="assets/img/icon/search-solid.svg" alt="home" width="25px">
+          <img src="assets/img/icon/shopping-basket-solid.svg" alt="home" width="25px">
+          <img src="assets/img/icon/file-invoice-dollar-solid.svg" alt="home" width="25px">
+          <img src="assets/img/icon/user-regular.svg" alt="home" width="25px">
+      </ion-toolbar>
+    </ion-footer>
+  
+    <!-- Footer avec bordure Desktop -->
+    <ion-footer class="ion-no-border footer ion-hide-md-down">
+      <ion-toolbar>
+        <h6>Brox - Tous droits réservés ®</h6>
+      </ion-toolbar>
+    </ion-footer>

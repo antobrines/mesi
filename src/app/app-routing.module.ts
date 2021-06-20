@@ -82,7 +82,19 @@ const routes: Routes = [
   {
     path: 'profile/delete-card',
     loadChildren: () => import('./profile/delete-card/delete-card.module').then( m => m.DeleteCardPageModule)
+  },  {
+    path: 'my-tickets',
+    loadChildren: () => import('./tickets/my-tickets/my-tickets.module').then( m => m.MyTicketsPageModule)
+  },
+  {
+    path: 'ticket',
+    loadChildren: () => import('./tickets/ticket/ticket.module').then( m => m.TicketPageModule)
+  },
+  {
+    path: 'new-ticket',
+    loadChildren: () => import('./tickets/new-ticket/new-ticket.module').then( m => m.NewTicketPageModule)
   }
+
 
 
 ];
