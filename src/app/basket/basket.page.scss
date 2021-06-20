@@ -21,12 +21,21 @@ ion-grid {
 .product {
     background-color: #5CCFBB;
     padding: 10px;
+    margin-top: 5%;
 }
 
 .quantity {
     display: flex;
     justify-content: center;
+    margin-top: 5%;
 }
+
+.price {
+    display: flex;
+    justify-content: center;
+    margin-top: 30%;
+}
+
 
 ion-item {
     width: 80px;
@@ -37,17 +46,19 @@ ion-item {
     --ion-item-background: transparent;
 }
 
-a {
-    background-color: #5CCFBB;
-    text-decoration: none;
-    color: black;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 60px;
-    transition: 0.5s;
-}
-
 a:hover {
     background-color: black;
     color: #5CCFBB;
+}
+button{
+    margin-top: 10%;
+}
+
+button a{
+    color: black;
+}
+
+a img{
+color: white; 
+text-shadow: 2px 2px 4px #00ffff; 
 }
