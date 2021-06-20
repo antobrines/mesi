@@ -82,6 +82,10 @@ const routes: Routes = [
   {
     path: 'profile/delete-card',
     loadChildren: () => import('./profile/delete-card/delete-card.module').then( m => m.DeleteCardPageModule)
+  },
+  {
+    path: 'product',
+    loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
   }
 
 
