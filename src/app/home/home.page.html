@@ -47,7 +47,6 @@
           <p>{{category.name}}</p>
         </div>
       </ion-col>
-    
     </ion-row>
   </ion-grid>
 
@@ -59,8 +58,10 @@
     <ion-row class="scrolling-wrapper">
       <ion-col col-3 class="" *ngFor="let product of products">
         <div class="card">
+          <a [routerLink]="['/product/', product.id]">
           <img src="assets/img/categories/categories.jpg" alt="product.name">
           <p>{{product.name}}</p>
+        </a>
         </div>
       </ion-col>
     </ion-row>

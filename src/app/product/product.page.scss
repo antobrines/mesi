@@ -1,4 +1,4 @@
-ion-content, ion-grid {
+ion-content{
     --ion-background-color: #CEF0EA;
     color: black;
 }
@@ -18,23 +18,8 @@ ion-grid {
 	height: 20vh;
 }
 
-a {
-    background-color: #5CCFBB;
-    text-decoration: none;
-    color: black;
-    padding: 10px 20px;
-    border-radius: 5px;
-    //margin-top: 60px;
-    transition: 0.5s;
-}
-
-a:hover {
-    background-color: black;
-    color: #5CCFBB;
-}
-ion-footer a {
-    padding-left: 0px;
-    padding-right: 0px;
+a{
+  color: black;
 }
 
 // CATEGORIES + PRODUITS

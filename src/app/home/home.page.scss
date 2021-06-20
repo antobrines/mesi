@@ -8,6 +8,10 @@ h1 {
   color: black;
 }
 
+.card a p{
+  color: black;
+}
+
 // CATEGORIES + PRODUITS
 .scrolling-wrapper {
   overflow-x: scroll;
@@ -53,5 +57,7 @@ h1 {
     display: none;
   }
 }
+
+
 
 

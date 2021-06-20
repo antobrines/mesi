@@ -96,7 +96,7 @@ const routes: Routes = [
     loadChildren: () => import('./tickets/new-ticket/new-ticket.module').then( m => m.NewTicketPageModule)
   },
   {
-    path: 'product',
+    path: 'product/:id',
     loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
   }
 

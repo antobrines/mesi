@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -6,10 +8,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product.page.scss'],
 })
 export class ProductPage implements OnInit {
+  public product = null;
+  public images = null;
 
-  constructor() { }
+  product_id: string;
+  product_name: string;
+  product_price_ht: string;
+  product_description: string;
+
+  constructor(private http: HttpClient,private actRoute: ActivatedRoute) {
+    this.product_id = this.actRoute.snapshot.params.id;
+  }
 
   ngOnInit() {
+    this.getProduct();
+    this.getImages();
   }
+
+  getProduct() {
+    this.http.get('http://127.0.0.1:8000/product/' + this.product_id).subscribe((datas: any) => {
+      this.product_name=datas.data.name;
+      this.product_price_ht=datas.data.price_ht;
+      this.product_description=datas.data.description;
+      console.log(this.product_id);
+      console.log(this.product);
+    });
+  }
+
+  getImages() {
+    this.http.get('http://127.0.0.1:8000/product/' + this.product_id + '/image').subscribe((datas: any) => {
+      this.images = datas.data.data;
+      console.log(this.images);
+    });
+  }
+
 
 }
