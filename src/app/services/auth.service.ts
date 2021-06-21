@@ -18,8 +18,6 @@ export class AuthService {
       client_secret: 'poBqa0j3VGl8zUygYaEyb67YcXj8dVS9a7T81CFI',
       scope: '*'
     };
-    // Add .env later for client_secret
-
     this.http.post('http://127.0.0.1:8000/oauth/token', data).subscribe(
       (result: any) => {
         localStorage.setItem('token', result.access_token);

@@ -20,6 +20,6 @@ import { RegistrationPage } from 'src/app/registration/registration.page';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  declarations: [LoginPage,RegistrationPage]
+  declarations: [LoginPage, RegistrationPage]
 })
 export class LoginPageModule { }
