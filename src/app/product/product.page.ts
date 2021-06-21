@@ -16,7 +16,7 @@ export class ProductPage implements OnInit {
   product_price_ht: string;
   product_description: string;
 
-  constructor(private http: HttpClient,private actRoute: ActivatedRoute) {
+  constructor(private http: HttpClient, private actRoute: ActivatedRoute) {
     this.product_id = this.actRoute.snapshot.params.id;
   }
 
@@ -27,9 +27,9 @@ export class ProductPage implements OnInit {
 
   getProduct() {
     this.http.get('http://127.0.0.1:8000/product/' + this.product_id).subscribe((datas: any) => {
-      this.product_name=datas.data.name;
-      this.product_price_ht=datas.data.price_ht;
-      this.product_description=datas.data.description;
+      this.product_name = datas.data.name;
+      this.product_price_ht = datas.data.price_ht;
+      this.product_description = datas.data.description;
       console.log(this.product_id);
       console.log(this.product);
     });
