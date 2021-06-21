@@ -12,7 +12,7 @@ import { ConfirmedValidator } from './confirmed.validator';
 })
 export class RegistrationPage implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient) { }
+  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private router: Router) { }
 
   myForm: FormGroup;
 
@@ -44,7 +44,7 @@ export class RegistrationPage implements OnInit {
   onSubmit() {
     this.httpClient.post<any>('http://127.0.0.1:8000/new/user', this.myForm.getRawValue()).subscribe(
       (res) => {
-        console.log(res);
+        this.router.navigate(['/login']);
       }
       ,
       (err) => console.log(err)
