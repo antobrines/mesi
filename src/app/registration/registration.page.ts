@@ -10,56 +10,46 @@ import { ConfirmedValidator } from './confirmed.validator';
   templateUrl: './registration.page.html',
   styleUrls: ['./registration.page.scss'],
 })
-export class RegistrationPage implements OnInit{
+export class RegistrationPage implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private router: Router) {}
+  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private router: Router) { }
 
-  myForm: FormGroup;  
+  myForm: FormGroup;
+
   ngOnInit() {
     this.myForm = this.formBuilder.group({
-      last_name:['', [Validators.required]],
-      first_name:['', [Validators.required]],
-      email:['', [Validators.required,Validators.email]],
+      last_name: ['', [Validators.required]],
+      first_name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required], Validators.minLength(6)],
-      password_confirmation: ['', [Validators.required],  Validators.minLength(6)],
-      phone_number:'',
+      password_confirmation: ['', [Validators.required], Validators.minLength(6)],
+      phone_number: '',
       profile_image: ['']
-    }, { 
+    }, {
       validator: ConfirmedValidator('password', 'password_confirmation')
-    })
+    });
   }
-  get f(){
+
+  get f() {
     return this.myForm.controls;
   }
 
- onFileSelect(event) {
-  if (event.target.files.length > 0) {
-    const file = event.target.files[0];
-    this.myForm.get('profile_image').setValue(file);
-  }
-}
-   
-onSubmit() {
-  var formData = new FormData();
-  formData.append('last_name', this.myForm.get('last_name').value);
-  formData.append('first_name', this.myForm.get('first_name').value);
-  formData.append('email', this.myForm.get('email').value);
-  formData.append('password', this.myForm.get('password').value);
-  formData.append('password_confirmation', this.myForm.get('password_confirmation').value);
-  formData.append('phone_number', this.myForm.get('phone_number').value);
-  formData.append('profile_image', this.myForm.get('profile_image').value);
-console.log(formData);
-  this.httpClient.post<any>('http://127.0.0.1:8000/new/user', formData).subscribe(
-    (result: any) => {
-
-      this.router.navigate(['/login']);
-    },
-    error => {
-      (err) => console.log(err)
+  onFileSelect(event) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.myForm.get('profile_image').setValue(file);
     }
-  );
   }
+
+  onSubmit() {
+    this.httpClient.post<any>('http://127.0.0.1:8000/new/user', this.myForm.getRawValue()).subscribe(
+      (res) => {
+        this.router.navigate(['/login']);
+      }
+      ,
+      (err) => console.log(err)
+    );
+  }
+
 }
-
-
 
