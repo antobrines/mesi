@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-product',
@@ -16,8 +17,12 @@ export class ProductPage implements OnInit {
   product_price_ht: string;
   product_description: string;
 
-  constructor(private http: HttpClient, private actRoute: ActivatedRoute) {
+  constructor(private http: HttpClient, private actRoute: ActivatedRoute, private _location: Location) {
     this.product_id = this.actRoute.snapshot.params.id;
+  }
+  
+  backClicked() {
+    this._location.back();
   }
 
   ngOnInit() {
