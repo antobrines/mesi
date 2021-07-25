@@ -42,14 +42,23 @@ export class RegistrationPage implements OnInit {
   }
 
   onSubmit() {
-    this.httpClient.post<any>('http://127.0.0.1:8000/new/user', this.myForm.getRawValue()).subscribe(
-      (res) => {
+    var formData = new FormData();
+    formData.append('last_name', this.myForm.get('last_name').value);
+    formData.append('first_name', this.myForm.get('first_name').value);
+    formData.append('email', this.myForm.get('email').value);
+    formData.append('password', this.myForm.get('password').value);
+    formData.append('password_confirmation', this.myForm.get('password_confirmation').value);
+    formData.append('phone_number', this.myForm.get('phone_number').value);
+    formData.append('profile_image', this.myForm.get('profile_image').value);
+  console.log(formData);
+    this.httpClient.post<any>('http://127.0.0.1:8000/new/user', formData).subscribe(
+      (result: any) => {
         this.router.navigate(['/login']);
+      },
+      error => {
+        (err) => console.log(err)
       }
-      ,
-      (err) => console.log(err)
     );
+    }
   }
-
-}
 
