@@ -16,6 +16,22 @@ ion-grid {
 	text-align: center;
 	flex-direction: column;
 	height: 20vh;
+    a img{
+        margin-left: 10px;
+        width: 30px;
+        height: auto;
+        vertical-align: middle;
+    }   
+}
+
+ul {
+    padding: 0;
+    li {
+    font-size: 1.6em;
+    list-style-type: none;
+    margin-top: 5vh;
+   
+}
 }
 
 .access-info {
