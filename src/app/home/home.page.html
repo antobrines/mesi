@@ -43,8 +43,10 @@
     <ion-row class="scrolling-wrapper">
       <ion-col col-3 class="" *ngFor="let category of categories">
         <div class="card">
+          <a [routerLink]="['/product/', category.id,'/categories']">
             <img src="{{category.image}}" alt="Categories">
           <p>{{category.name}}</p>
+        </a>
         </div>
       </ion-col>
     </ion-row>
