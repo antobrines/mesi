@@ -1,0 +1,97 @@
+<ion-content [fullscreen]="true">
+
+  <!-- SEARCH BAR MOBILE-->
+  <ion-toolbar class="ion-hide-md-up">
+    <ion-searchbar placeholder="Recherche"></ion-searchbar>
+  </ion-toolbar>
+  
+  <!-- SEARCH BAR DESKTOP-->
+  <ion-toolbar class="ion-hide-md-down">
+    <ion-buttons slot="secondary">
+      <!-- Le lien peut être mis directement de cette façon ( à modifier lorqu'on aura la page profil ) -->
+      <ion-button color="dark" href="/registration">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title><img class="brox-little" src="/assets/img/logos/logo-black-text.png" alt="Categories"></ion-title>
+  </ion-toolbar>
+  
+  
+    <!-- Bannière -->
+  
+  <div class="banniere">
+      <ion-grid>
+        <ion-row class="scrolling-wrapper">
+          <ion-col col-6 >
+      <a (click)="backClicked()"><img src="/assets/img/icon/left-arrow.svg" alt=""></a>
+    </ion-col>
+      <ion-col col-6>
+        <h2>{{category_name}}</h2>
+    </ion-col>
+    </ion-row>
+    </ion-grid>  
+  </div>
+
+
+    <!-- Bouton de tri -->
+  
+    <ion-grid [fixed]="true">
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <div class="detail-purchase tri">
+          <a href="">Tri</a>
+        </div>
+      </ion-row>
+    </ion-grid>
+  
+  
+    <!-- Liste des commandes -->
+  
+    <ion-grid [fixed]="true">
+      
+      <ion-row class="ion-justify-content-center ion-align-items-center" *ngFor="let product of products">
+        <ion-col size="6">
+          <div class="purchase">
+            {{product.name}}
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div class="price">
+            <p>{{product.price_ht}} €</p>
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div class="detail-purchase">
+            <a [routerLink]="['/product/', product.id]" alt="product">Détails</a>
+          </div>
+        </ion-col>
+      </ion-row>
+  
+    </ion-grid>
+  
+  </ion-content>
+  
+      <!-- Footer avec bordure Mobile -->
+      <ion-footer class="ion-no-border footer ion-hide-md-up">
+        <ion-toolbar>
+          <a href="../home"><img src="assets/img/icon/home-solid.svg" alt="home" width="25px"></a>
+          <a href="../search"><img src="assets/img/icon/search-solid.svg" alt="search" width="25px"></a>
+          <a href="../basket"><img src="assets/img/icon/shopping-basket-solid.svg" alt="basket" width="25px"></a>
+          <a href="../purchases"><img src="assets/img/icon/file-invoice-dollar-solid.svg" alt="purchases" width="25px"></a>
+          <a href="../profile/informations"><img src="assets/img/icon/user-regular.svg" alt="profile" width="25px"></a>
+        </ion-toolbar>
+      </ion-footer>
+    
+      <!-- Footer avec bordure Desktop -->
+      <ion-footer class="ion-no-border footer ion-hide-md-down">
+        <ion-toolbar>
+          <h6>Brox - Tous droits réservés ®</h6>
+        </ion-toolbar>
+      </ion-footer>

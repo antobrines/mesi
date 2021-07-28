@@ -1,54 +1,138 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AccountPage } from './account/account.page';
-import { LoginPage } from './auth/login/login.page';
-import { BasketPage } from './basket/basket.page';
-import { ForgotPasswordPage } from './forgot-password/forgot-password.page';
-import { HomePage } from './home/home.page';
-import { ChatListPage } from './messages/chat-list/chat-list.page';
-import { ChatPage } from './messages/chat/chat.page';
-import { ProductPage } from './product/product.page';
-import { AddCardPage } from './profile/add-card/add-card.page';
-import { AdressesPage } from './profile/adresses/adresses.page';
-import { ChangePasswordPage } from './profile/change-password/change-password.page';
-import { CreditCardPage } from './profile/credit-card/credit-card.page';
-import { DeleteCardPage } from './profile/delete-card/delete-card.page';
-import { EditCardPage } from './profile/edit-card/edit-card.page';
-import { HelpPage } from './profile/help/help.page';
-import { InformationsPage } from './profile/informations/informations.page';
-import { MenuPage } from './profile/menu/menu.page';
-import { PurchasesPage } from './purchases/purchases/purchases.page';
-import { RegistrationPage } from './registration/registration.page';
-import { SearchPage } from './search/search.page';
-import { MyTicketsPage } from './tickets/my-tickets/my-tickets.page';
-import { NewTicketPage } from './tickets/new-ticket/new-ticket.page';
-import { TicketPage } from './tickets/ticket/ticket.page';
 
 const routes: Routes = [
-  { path: '', component: HomePage },
-  { path: 'login', component: LoginPage },
-  { path: 'registration', component: RegistrationPage },
-  { path: 'search', component: SearchPage },
-  { path: 'purchases', component: PurchasesPage },
-  { path: 'basket', component: BasketPage },
-  { path: 'account', component: AccountPage },
-  { path: 'forgot-password', component: ForgotPasswordPage },
-  { path: 'profile/menu', component: MenuPage },
-  { path: 'profile/informations', component: InformationsPage },
-  { path: 'profile/change-password', component: ChangePasswordPage },
-  { path: 'profile/credit-card', component: CreditCardPage },
-  { path: 'profile/adresses', component: AdressesPage },
-  { path: 'profile/help', component: HelpPage },
-  { path: 'profile/add-card', component: AddCardPage },
-  { path: 'profile/edit-card', component: EditCardPage },
-  { path: 'profile/delete-card', component: DeleteCardPage },
-  { path: 'chat-list', component: ChatListPage },
-  { path: 'chat', component: ChatPage },
-  { path: 'my-tickets', component: MyTicketsPage },
-  { path: 'ticket', component: TicketPage },
-  { path: 'new-ticket', component: NewTicketPage },
-  { path: 'product/:id', component: ProductPage },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'registration',
+    loadChildren: () => import('./registration/registration.module').then( m => m.RegistrationPageModule)
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+  },
+  {
+    path: 'search-cat/:id',
+    loadChildren: () => import('./search/search-cat/search-cat.module').then( m => m.SearchCatPageModule)
+  },
+  {
+    path: 'search-all',
+    loadChildren: () => import('./search/search-all/search-all.module').then( m => m.SearchAllPageModule)
+  },
+  {
+    path: 'order',
+    loadChildren: () => import('./purchases/order/order.module').then( m => m.OrderPageModule)
+  },
+  {
+    path: 'purchases',
+    loadChildren: () => import('./purchases/purchases/purchases.module').then( m => m.PurchasesPageModule)
+  },
+  {
+    path: 'basket',
+    loadChildren: () => import('./basket/basket.module').then( m => m.BasketPageModule)
+  },
+  {
+    path: 'account',
+    loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  },
+  {
+    path: 'profile/menu',
+    loadChildren: () => import('./profile/menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'profile/informations',
+    loadChildren: () => import('./profile/informations/informations.module').then( m => m.InformationsPageModule)
+  },
+  {
+    path: 'profile/change-password',
+    loadChildren: () => import('./profile/change-password/change-password.module').then( m => m.ChangePasswordPageModule)
+  },
+  {
+    path: 'profile/credit-card',
+    loadChildren: () => import('./profile/credit-card/credit-card.module').then( m => m.CreditCardPageModule)
+  },
+  {
+    path: 'profile/adresses',
+    loadChildren: () => import('./profile/adresses/adresses.module').then( m => m.AdressesPageModule)
+  },
+  {
+    path: 'chat-list',
+    loadChildren: () => import('./messages/chat-list/chat-list.module').then( m => m.ChatListPageModule)
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./messages/chat/chat.module').then( m => m.ChatPageModule)
+  },
+  {
+    path: 'profile/help',
+    loadChildren: () => import('./profile/help/help.module').then( m => m.HelpPageModule)
+  },
+  {
+    path: 'profile/add-card',
+    loadChildren: () => import('./profile/add-card/add-card.module').then( m => m.AddCardPageModule)
+  },
+  {
+    path: 'profile/edit-card',
+    loadChildren: () => import('./profile/edit-card/edit-card.module').then( m => m.EditCardPageModule)
+  },
+  {
+    path: 'profile/delete-card',
+    loadChildren: () => import('./profile/delete-card/delete-card.module').then( m => m.DeleteCardPageModule)
+  },
+  {
+    path: 'my-tickets',
+    loadChildren: () => import('./tickets/my-tickets/my-tickets.module').then( m => m.MyTicketsPageModule)
+  },
+  {
+    path: 'ticket',
+    loadChildren: () => import('./tickets/ticket/ticket.module').then( m => m.TicketPageModule)
+  },
+  {
+    path: 'new-ticket',
+    loadChildren: () => import('./tickets/new-ticket/new-ticket.module').then( m => m.NewTicketPageModule)
+  },
+  {
+    path: 'product/:id',
+    loadChildren: () => import('./product/product.module').then( m => m.ProductPageModule)
+  },
+  {
+    path: 'favorites',
+    loadChildren: () => import('./favorites/favorites.module').then( m => m.FavoritesPageModule)
+  },
+  {
+    path: 'ads-list',
+    loadChildren: () => import('./ads/ads-list/ads-list.module').then( m => m.AdsListPageModule)
+  },
+  {
+    path: 'manage-ad',
+    loadChildren: () => import('./ads/manage-ad/manage-ad.module').then( m => m.ManageAdPageModule)
+  },
+  {
+    path: 'new-ad',
+    loadChildren: () => import('./ads/new-ad/new-ad.module').then( m => m.NewAdPageModule)
+  },
+  {
+    path: 'delete-account',
+    loadChildren: () => import('./auth/delete-account/delete-account.module').then( m => m.DeleteAccountPageModule)
+  }
+
+
 ];
 
 @NgModule({

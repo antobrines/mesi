@@ -22,7 +22,28 @@ export class LoginPage implements OnInit {
   }
 
   submit() {
-    this.authS.login(this.form.getRawValue());
+    console.log(this.form.getRawValue());
+    const formData = this.form.getRawValue();
+
+    const data = {
+      username: formData.email,
+      password: formData.password,
+      grant_type: 'password',
+      client_id: 2,
+      client_secret: 'Z3ry7z9YP9sZLkZXpp5u2T7i1IpzxYBORmtQs512',
+      scope: '*'
+    };
+
+    this.http.post('http://127.0.0.1:8000/oauth/token', data).subscribe(
+      (result: any) => {
+        localStorage.setItem('token', result.access_token);
+        this.router.navigate(['/profile/menu']);
+      },
+      error => {
+        console.log(error);
+        // manage error later
+      }
+    );
   }
 
 }

@@ -31,7 +31,9 @@
   <ion-row class="">
     <ion-col size="6" size-md="3" *ngFor="let category of categories">
       <h3 class="ion-text-center">{{category.name}}</h3>
+      <a [routerLink]="['/search-cat/', category.id]">
       <div class="card"><img src="{{category.image}}" alt="Categories" max-width="600px" height="auto"></div>
+    </a>
     </ion-col>
   </ion-row>
 </ion-grid>

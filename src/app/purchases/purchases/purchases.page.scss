@@ -10,12 +10,12 @@ ion-grid {
 .banniere {
     background-color: #5CCFBB;
     color: black;
-    display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	flex-direction: column;
-	height: 20vh;
+	  height: 20vh;
+      a img{
+          width: 30px;
+          height: auto;
+          margin-top: 10px;
+          }   
 }
 
 .purchase {

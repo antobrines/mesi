@@ -10,17 +10,11 @@ ion-grid {
 .banniere {
     background-color: #5CCFBB;
     color: black;
-    display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	flex-direction: column;
 	height: 20vh;
     a img{
-        margin-left: 10px;
         width: 30px;
         height: auto;
-        vertical-align: middle;
+        margin-top: 10px;
     }   
 }
 

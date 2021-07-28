@@ -21,7 +21,16 @@
   <!-- Bannière -->
 
   <div class="banniere">
-    <a (click)="backClicked()"><img src="/assets/img/icon/left-arrow.svg" alt=""></a><h1>Modification de profil</h1>
+      <ion-grid>
+        <ion-row>
+          <ion-col >
+      <a (click)="backClicked()"><img src="/assets/img/icon/left-arrow.svg" alt=""></a>
+    </ion-col>
+      <ion-col>
+        <h1>Modification de profil</h1>
+    </ion-col>
+    </ion-row>
+    </ion-grid>  
   </div>
 
   <!-- Accès Informations Compte -->
@@ -29,7 +38,7 @@
   <ion-grid [fixed]="true">
     <ion-row class="ion-justify-content-center ion-align-items-center">
       <ion-col size="12">
-        <a class="access-info" href="/profile/informations">Informations personelles</a>
+        <a class="access-info" href="/profile/informations/edit">Informations personelles</a>
       </ion-col>
       <ion-col size="12">
         <a class="access-info" href="/profile/change-password">Mot de passe</a>
