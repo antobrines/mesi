@@ -61,7 +61,7 @@
       <ion-col col-3 class="" *ngFor="let product of products">
         <div class="card">
           <a [routerLink]="['/product/', product.id]">
-          <img src="assets/img/categories/categories.jpg" alt="product.name">
+          <img src="{{product.product_image}}" alt="product.image">
           <p>{{product.name}}</p>
         </a>
         </div>
