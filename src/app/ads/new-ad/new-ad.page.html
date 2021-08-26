@@ -1,9 +1,63 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>new-ad</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
 
-<ion-content>
+	 <!-- SEARCH BAR DESKTOP-->
+	<ion-toolbar class="ion-hide-md-down">
+		<ion-buttons slot="secondary">
+			<ion-button color="dark" href="/profile/menu">
+			<ion-icon slot="icon-only" name="person-circle"></ion-icon>
+			</ion-button>
+			<ion-button color="dark">
+			<ion-icon slot="icon-only" name="search"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+		<ion-buttons slot="primary">
+			<ion-button color="dark">
+			<ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+		<ion-title><img class="brox-little" src="/assets/img/logos/logo-black-text.png" alt="Categories"></ion-title>
+	</ion-toolbar>
+	
 
+	<!-- Bannière -->
+
+	<div class="banniere">
+		<h1>Ajouter une annonce</h1>
+	</div>
+
+	<div class="wrapper ">
+		<div id="formContent">
+		  <!-- Modifier ses infos Form -->
+		  <form>
+			<input type="text" id="nom_produit"  name="nom_produit" placeholder="Nom du produit" #nom_produit>
+			<input type="text" id="description"  name="description" placeholder="Description" #description>
+			<input type="number" id="stock"  name="stock" placeholder="Quantité en stock" #stock>
+			<input type="number" id="p_ht"  name="p_ht" placeholder="Prix HT" #p_ht>
+			<input type="number" id="p_ttc" name="p_ttc" placeholder="Prix TTC" #p_ttc>
+			<input type="file" id="profile_image" name="profile_image" placeholder="Photos (3 maximum)" accept="image/png, image/jpeg, image/jpg"/>
+			<input type="submit" class="submit" value="Ajouter" onclick="AddAdds(nom_produit.value,description.value,stock.value,p_ht.value,p_ttc.value)">
+		  </form>
+		  
+		</div>
+	  </div>
 </ion-content>
+
+
+<!-- Footer avec bordure Mobile -->
+
+<ion-footer class="ion-no-border footer ion-hide-md-up">
+	<ion-toolbar>
+		<a href="../home"><img src="assets/img/icon/home-solid.svg" alt="home" width="25px"></a>
+		<a href="../search"><img src="assets/img/icon/search-solid.svg" alt="search" width="25px"></a>
+		<a href="../basket"><img src="assets/img/icon/shopping-basket-solid.svg" alt="basket" width="25px"></a>
+		<a href="../purchases"><img src="assets/img/icon/file-invoice-dollar-solid.svg" alt="purchases" width="25px"></a>
+		<a href="../profile/informations"><img src="assets/img/icon/user-regular.svg" alt="profile" width="25px"></a>
+	</ion-toolbar>
+</ion-footer>
+
+<!-- Footer avec bordure Desktop -->
+<ion-footer class="ion-no-border footer ion-hide-md-down">
+	<ion-toolbar>
+		<h6>Brox - Tous droits réservés ®</h6>
+	</ion-toolbar>
+</ion-footer>
