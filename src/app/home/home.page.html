@@ -3,7 +3,7 @@
 
   <!-- SEARCH BAR MOBILE-->
   <ion-toolbar class="ion-hide-md-up">
-    <ion-searchbar placeholder="Recherche"></ion-searchbar>
+    <ion-searchbar animated [(ngModel)]="searchName" (keyup)="searchProductByName($event)" autocomplete="off" placeholder="Recherche"></ion-searchbar>
   </ion-toolbar>
 
   <!-- SEARCH BAR DESKTOP-->
@@ -30,6 +30,20 @@
     <ion-row>
       <ion-col>
         <div class="brox"></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+ <!-- recherche -->
+  <ion-grid>
+    <ion-row class="scrolling-wrapper">
+      <ion-col col-3 *ngFor="let item of items">
+        <div class="card">
+          <a [routerLink]="['/product/', item.id]">
+          <img src="{{item.product_image}}" alt="product.image">
+          <p>{{item.name}}</p>
+        </a>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>

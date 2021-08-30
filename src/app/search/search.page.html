@@ -2,7 +2,7 @@
 
   <!-- SEARCH BAR MOBILE-->
   <ion-toolbar class="ion-hide-md-up">
-    <ion-searchbar placeholder="Recherche"></ion-searchbar>
+    <ion-searchbar animated [(ngModel)]="searchName" (keyup)="searchProductByName($event)" autocomplete="off" placeholder="Recherche"></ion-searchbar>
   </ion-toolbar>
   
   <!-- SEARCH BAR DESKTOP-->
@@ -24,8 +24,19 @@
     <ion-title><img class="brox-little" src="/assets/img/logos/logo-black-text.png" alt="Categories"></ion-title>
   </ion-toolbar>
 
-<!-- Carrés catégories -->
 
+  <ion-grid>
+    <ion-row class="">
+      <ion-col size="6" size-md="3" *ngFor="let item of items">
+        <h3 class="ion-text-center">{{item.name}}</h3>
+        <a [routerLink]="['/search-cat/', item.id]">
+        <div class="card"><img src="{{item.product_image}}" alt="Categories" max-width="600px" height="auto"></div>
+      </a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+<!-- Carrés catégories -->
 
 <ion-grid>
   <ion-row class="">
