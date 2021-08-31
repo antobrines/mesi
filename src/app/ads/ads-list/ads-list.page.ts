@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-ads-list',
@@ -9,10 +8,29 @@ import {Location} from '@angular/common';
   styleUrls: ['./ads-list.page.scss'],
 })
 export class AdsListPage implements OnInit {
+  public products = null;
   
-  constructor() { }
+  constructor(private http: HttpClient,private actRoute: ActivatedRoute) {}
 
   ngOnInit() {
+    this.getProducts();
+  }
+
+  getProducts() {
+    const token = localStorage.getItem('token');
+    const header = {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + token
+    };
+    const requestOptions = {
+      headers: new HttpHeaders(header),
+    };
+
+    this.http.get('http://mesiback/userads', requestOptions).subscribe(
+      (data:any) => {
+        this.products = data.data;
+      }
+    );
   }
 
 }

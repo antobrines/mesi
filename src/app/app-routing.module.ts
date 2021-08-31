@@ -120,7 +120,7 @@ const routes: Routes = [
     loadChildren: () => import('./ads/ads-list/ads-list.module').then( m => m.AdsListPageModule)
   },
   {
-    path: 'manage-ad',
+    path: 'manage-ad/:id',
     loadChildren: () => import('./ads/manage-ad/manage-ad.module').then( m => m.ManageAdPageModule)
   },
   {

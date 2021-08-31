@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-ad',
@@ -7,9 +10,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewAdPage implements OnInit {
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private router: Router) { }
+
+  myForm: FormGroup;
 
   ngOnInit() {
+    this.myForm = this.formBuilder.group({
+      name: ['', [Validators.required]],
+      description: ['', [Validators.required], , Validators.minLength(5)],
+      stock: ['', [Validators.required]],
+      price_ht: ['', [Validators.required]],
+      product_image: ['', [Validators.required]]
+    });
+  }
+
+  get f() {
+    return this.myForm.controls;
+  }
+
+  onFileSelect(event) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.myForm.get('product_image').setValue(file);
+    }
+  }
+
+  onSubmit() {
+    const headers = { Authorization: 'Bearer ' + localStorage.getItem('token') };
+    var formData = new FormData();
+    formData.append('name', this.myForm.get('name').value);
+    formData.append('description', this.myForm.get('description').value);
+    formData.append('stock', this.myForm.get('stock').value);
+    formData.append('price_ht', this.myForm.get('price_ht').value);
+    formData.append('product_image', this.myForm.get('product_image').value);
+    console.log(formData);
+    this.httpClient.post('http://mesiback/new/product', formData, { headers }).subscribe((result: any) => {    
+      console.log(result);
+    });
   }
 
 }

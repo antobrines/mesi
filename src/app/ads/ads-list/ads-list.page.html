@@ -23,81 +23,25 @@
 
 	<ion-grid [fixed]="true">
 
-	  <ion-row class="ion-justify-content-center ion-align-items-center">
+	  <ion-row class="ion-justify-content-center ion-align-items-center" *ngFor="let product of products">
 		<ion-col size="6">
 		  <div class="purchase">
-			<img src="{{ad_image}}" alt="annonce">
+			<img src="{{product.product_image}}" alt="annonce">
 		  </div>
 		</ion-col>
 		<ion-col size="3">
 		  <div class="price">
-			<p>{{product_name}}</p>
-			<p>{{product_price_ht}}€</p>
+			<p>{{product.name}}</p>
+			<p>{{product.price_ht}}€</p>
 		  </div>
 		</ion-col>
 		<ion-col size="3">
 		  <div class="detail-purchase">
-			<a href="/manage-ad" alt="ad">Gérer</a>
+			<a [routerLink]="['/manage-ad/', product.id]">Gérer</a>
 		  </div>
 		</ion-col>
 	  </ion-row>
-
-	  <ion-row class="ion-justify-content-center ion-align-items-center">
-		<ion-col size="6">
-		  <div class="purchase">
-			<img src="{{ad_image}}" alt="annonce">
-		  </div>
-		</ion-col>
-		<ion-col size="3">
-		  <div class="price">
-			<p>{{product_name}}</p>
-			<p>{{product_price_ht}} €</p>
-		  </div>
-		</ion-col>
-		<ion-col size="3">
-		  <div class="detail-purchase">
-			<a href="/manage-ad" alt="ad">Gérer</a>
-		  </div>
-		</ion-col>
-	  </ion-row>
-
-	  <ion-row class="ion-justify-content-center ion-align-items-center">
-		<ion-col size="6">
-		  <div class="purchase">
-			<img src="{{ad_image}}" alt="annonce">
-		  </div>
-		</ion-col>
-		<ion-col size="3">
-		  <div class="price">
-			<p>{{product_name}}</p>
-			<p>{{product_price_ht}} €</p>
-		  </div>
-		</ion-col>
-		<ion-col size="3">
-		  <div class="detail-purchase">
-			<a href="/manage-ad" alt="ad">Gérer</a>
-		  </div>
-		</ion-col>
-	  </ion-row>
-
-	  <ion-row class="ion-justify-content-center ion-align-items-center">
-		<ion-col size="6">
-		  <div class="purchase">
-			<img src="{{ad_image}}" alt="annonce">
-		  </div>
-		</ion-col>
-		<ion-col size="3">
-		  <div class="price">
-			<p>{{product_name}}</p>
-			<p>{{product_price_ht}} €</p>
-		  </div>
-		</ion-col>
-		<ion-col size="3">
-		  <div class="detail-purchase">
-			<a href="/manage-ad" alt="ad">Gérer</a>
-		  </div>
-		</ion-col>
-	  </ion-row>
+	  
 	</ion-grid>
 </ion-content>
 

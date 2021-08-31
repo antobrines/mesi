@@ -28,16 +28,31 @@
 	<div class="wrapper ">
 		<div id="formContent">
 		  <!-- Modifier ses infos Form -->
-		  <form>
-			<input type="text" id="nom_produit"  name="nom_produit" placeholder="Nom du produit" #nom_produit>
-			<input type="text" id="description"  name="description" placeholder="Description" #description>
-			<input type="number" id="stock"  name="stock" placeholder="Quantité en stock" #stock>
-			<input type="number" id="p_ht"  name="p_ht" placeholder="Prix HT" #p_ht>
-			<input type="number" id="p_ttc" name="p_ttc" placeholder="Prix TTC" #p_ttc>
-			<input type="file" id="profile_image" name="profile_image" placeholder="Photos (3 maximum)" accept="image/png, image/jpeg, image/jpg"/>
-			<input type="submit" class="submit" value="Ajouter" onclick="AddAdds(nom_produit.value,description.value,stock.value,p_ht.value,p_ttc.value)">
+		  <form [formGroup] = "myForm" (ngSubmit)="onSubmit()">
+			<input type="text" id="name" name="name" placeholder="Nom du produit" formControlName="name">
+			<div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+				<div *ngIf="f.name.errors.required">Le nom du produit doit être renseigné.</div>
+			</div>
+
+			<input type="text" id="description" name="description" placeholder="Description" formControlName="description">
+			<div *ngIf="f.description.touched && f.description.invalid" class="alert alert-danger">
+				<div *ngIf="f.description.errors.required">La decription du produit doit être renseigné.</div>
+				<div *ngIf="f.description.errors.minlength">La decription du produit doit contenir 5 caractères minimum.</div>
+			</div>
+
+			<input type="number" id="stock" name="stock" placeholder="Quantité en stock" formControlName="stock">
+			<div *ngIf="f.stock.touched && f.stock.invalid" class="alert alert-danger">
+				<div *ngIf="f.stock.errors.required">Le nombre de produits disponibles doit être renseigné.</div>
+			</div>
+
+			<input type="number" id="price_ht" name="price_ht" placeholder="Prix" formControlName="price_ht">
+			<div *ngIf="f.price_ht.touched && f.price_ht.invalid" class="alert alert-danger">
+				<div *ngIf="f.price_ht.errors.required">Le prix du produit doit être renseigné.</div>
+			</div>
+
+			<input type="file" id="product_image" name="product_image" placeholder="Photos (3 maximum)" accept="image/png, image/jpeg, image/jpg"(change)="onFileSelect($event)"/>
+			<input type="submit"  value="Ajouter">
 		  </form>
-		  
 		</div>
 	  </div>
 </ion-content>
