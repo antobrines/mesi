@@ -15,7 +15,13 @@ export class HomePage implements OnInit {
   searchName: any;
   public items = null;
 
+    //Infinite scroll
+    listArray : string[] = [];
+    direction = "";
+    nextUrl=null;
+
   constructor(private http: HttpClient,private actRoute: ActivatedRoute) {
+    this.appendItems();
   }
 
   ngOnInit(): void {
@@ -28,14 +34,13 @@ export class HomePage implements OnInit {
     this.searchName  = key.target.value;
     if (this.searchName == '') {
       this.getProductByName("!=!?").subscribe( res => {
-        this.items = res.data.data;
-        console.log(this.searchName);
+        this.listArray = res.data.data;
       });
     } else {
       this.getProductByName(this.searchName).subscribe( res => {
-        this.items = res.data.data;
-        console.log(this.searchName);
-        console.log(this.items);
+        this.listArray = res.data.data;
+        this.nextUrl=res.data.next_page_url;
+        console.log(this.nextUrl);
       });
     }
   }
@@ -57,5 +62,43 @@ export class HomePage implements OnInit {
         return res;
     }));
 }
+
+
+  //infinite scroll
+  onScrollDown(ev: any) {
+    console.log("scrolled down!!", ev);
+
+    
+    this.appendItems();
+    
+    this.direction = "scroll down";
+  }
+
+  onScrollUp(ev: any) {
+    console.log("scrolled up!", ev);
+    
+    this.prependItems();
+
+    this.direction = "scroll up";
+  }
+
+  appendItems() {
+    this.addItems("push");
+  }
+
+  prependItems() {
+    this.addItems("unshift");
+  }
+
+  addItems(_method: string) {
+      if( _method === 'push'){
+        this.http.get(this.nextUrl).subscribe((datas: any) => {
+          this.nextUrl = datas.data.next_page_url;
+          datas.data.data.forEach(element => {
+            this.listArray.push(element);
+          });
+      })
+    }
+  }
   
 }
