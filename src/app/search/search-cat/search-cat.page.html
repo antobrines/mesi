@@ -52,13 +52,13 @@
     </ion-grid>
   
   
-    <!-- Liste des commandes -->
+    <!-- Liste des produits -->
   
     <ion-grid [fixed]="true">
       
       <ion-row class="ion-justify-content-center ion-align-items-center" *ngFor="let product of products">
         <ion-col size="6">
-            <img src="{{product.product_image}}" alt="{{product.name}}">
+            <img src="http://localhost:8000/product_image/{{product.product_image}}" alt="{{product.name}}">
         </ion-col>
         <ion-col size="3">
           <div class="price">

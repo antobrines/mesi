@@ -34,19 +34,21 @@
     </ion-row>
   </ion-grid>
 
- <!-- recherche -->
+  <!--search infinite scrollbar-->
+  <div class="search-results-container" infinite-scroll [scrollWindow]="false" (scrolled)="onScrollDown($event)"
+    (scrolledUp)="onScrollUp($event)">
   <ion-grid>
-    <ion-row class="scrolling-wrapper">
-      <ion-col col-3 *ngFor="let item of items">
-        <div class="card">
-          <a [routerLink]="['/product/', item.id]">
-          <img src="{{item.product_image}}" alt="product.image">
-          <p>{{item.name}}</p>
-        </a>
-        </div>
-      </ion-col>
+    <ion-row>
+      <ion-col size="6" size-md="3" *ngFor="let item of listArray">
+        <h3 class="ion-text-center">{{item.name}} {{item.id}}</h3>
+        <a [routerLink]="['/product/', item.id]">
+    <div class="card"><img src="http://localhost:8000/product_image/{{item.product_image}}" alt="{{item.name}}"
+        max-width="600px" height="auto"></div>
+    </a>
+    </ion-col>
     </ion-row>
-  </ion-grid>
+    </ion-grid>
+</div>
 
   <!-- Liste des catégories ( for each à faire quand table + requête ok ) -->
 
@@ -81,7 +83,7 @@
       <ion-col col-3 class="" *ngFor="let product of products">
         <div class="card">
           <a [routerLink]="['/product/', product.id]">
-          <img src="{{product.product_image}}" alt="product.image">
+          <img src="http://localhost:8000/product_image/{{product.product_image}}" alt="product.image">
           <p>{{product.name}}</p>
         </a>
         </div>

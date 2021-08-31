@@ -6,74 +6,69 @@
     <h1>Mon Panier</h1>
   </div>
 
-  <!-- Liste des produits -->
+  <h2 *ngIf="basket==null">Il n'y a pas de produits dans votre panier</h2>
+  
+  <!-- Liste des produits hors stock -->
 
-  <ion-grid [fixed]="true">
-    <h2>Récapitulatif du panier</h2>
-    <ion-row class="ion-justify-content-center ion-align-items-center">
+    <ion-grid [fixed]="true">
+      <h2 *ngIf(basketSold)>Produit épuisé</h2>
+      <ion-row class="ion-justify-content-center ion-align-items-center" *ngFor="let item of basketSold">
+        <ion-col size="6">
+          <a [routerLink]="['/product/', item.id]">
+          <div class="product">
+            {{item.name}}
+            </div>
+          </a>
+            </ion-col>
+            <ion-col size="4">
+              <div class="quantity">
+                <ion-item lines="none" class="ion-no-padding">
+                  <ion-button (click)="basketS.removeProductBasket(item.id);updateData()">
+                    -
+                  </ion-button>
+                  <ion-input type="number" value="0"></ion-input>
+                  <ion-icon name="add-circle" item-right></ion-icon>
+                  </ion-item>
+                  </div>
+                  </ion-col>
+                  <ion-col size="2">
+                    <div class="price">
+            <p>{{item.price_ht}} €</p>
+            </div>
+            </ion-col>
+            </ion-row>
+            <!-- Liste des produits -->
+            
+            <h2 *ngIf="basket!=null">Récapitulatif du panier</h2>
+            <ion-row class="ion-justify-content-center ion-align-items-center" *ngFor="let item of basket; let index = index;">
       <ion-col size="6">
+        <a [routerLink]="['/product/', item.id]">
         <div class="product">
-          Produit 1
+          {{item.name}}
         </div>
+      </a>
       </ion-col>
       <ion-col size="4">
         <div class="quantity">
           <ion-item lines="none" class="ion-no-padding">
-            <ion-icon name="remove-circle" item-right></ion-icon>
-            <ion-input type="number" value="2"></ion-input>
+            <ion-button (click)="basketS.removeProductBasket(item.id);updateData()">
+              -
+            </ion-button>
+            <ion-input type="number" [(ngModel)]="values[index]"></ion-input>
             <ion-icon name="add-circle" item-right></ion-icon>
+            <ion-button *ngIf="basket==null">
+              +
+            </ion-button>
           </ion-item>
         </div>
       </ion-col>
       <ion-col size="2">
         <div class="price">
-          <p>10.00 €</p>
+          <p>{{item.price_ht}} €</p>
         </div>
       </ion-col>
     </ion-row>
-    <ion-row class="ion-justify-content-center ion-align-items-center">
-      <ion-col size="6">
-        <div class="product">
-          Produit 2
-        </div>
-      </ion-col>
-      <ion-col size="4">
-        <div class="quantity">
-          <ion-item lines="none" class="ion-no-padding">
-            <ion-icon name="remove-circle" item-right></ion-icon>
-            <ion-input type="number" value="1"></ion-input>
-            <ion-icon name="add-circle" item-right></ion-icon>
-          </ion-item>
-        </div>
-      </ion-col>
-      <ion-col size="2">
-        <div class="price">
-          <p>50.00 €</p>
-        </div>
-      </ion-col>
-    </ion-row>
-    <ion-row class="ion-justify-content-center ion-align-items-center">
-      <ion-col size="6">
-        <div class="product">
-          Produit 3
-        </div>
-      </ion-col>
-      <ion-col size="4">
-        <div class="quantity">
-          <ion-item lines="none" class="ion-no-padding">
-            <ion-icon name="remove-circle" item-right></ion-icon>
-            <ion-input type="number" value="1"></ion-input>
-            <ion-icon name="add-circle" item-right></ion-icon>
-          </ion-item>
-        </div>
-      </ion-col>
-      <ion-col size="2">
-        <div class="price">
-          <p>30.00 €</p>
-        </div>
-      </ion-col>
-    </ion-row>
-    <ion-row class="ion-justify-content-center ion-align-items-center">
+<ion-row class="ion-justify-content-center ion-align-items-center" *ngIf="basket!=null">
       <ion-col size="6">
         <div class="product">
           TOTAL
@@ -90,7 +85,7 @@
         </div>
       </ion-col>
     </ion-row>
-    <ion-row class="ion-justify-content-center ion-align-items-center">
+    <ion-row class="ion-justify-content-center ion-align-items-center" *ngIf="basket!=null">
       <button type=“button”><a href=“”>Valider mon panier</a></button>
     </ion-row>
     
