@@ -1,0 +1,62 @@
+<ion-content [fullscreen]="true">
+
+    <!-- SEARCH BAR DESKTOP-->
+    <ion-toolbar class="ion-hide-md-down">
+      <ion-buttons slot="secondary">
+        <ion-button color="dark" href="/profile/menu">
+          <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+        </ion-button>
+        <ion-button color="dark">
+          <ion-icon slot="icon-only" name="search"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="primary">
+        <ion-button color="dark">
+          <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title><img class="brox-little" src="/assets/img/logos/logo-black-text.png" alt="Categories"></ion-title>
+    </ion-toolbar>
+    <!-- Bannière -->
+
+  <!-- Bannière -->
+
+  <div class="banniere">
+    <h1>Votre adresse</h1>
+  </div>
+
+  <div class="wrapper ">
+    <div id="formContent">
+
+      <h1 class="title">Ajouter ou modifier votre adresse de livraison</h1>
+      <!-- Modifier ses infos Form -->
+      <form>
+        <input type="text" id="rue"  name="rue" placeholder="Rue" #rue>
+        <input type="text" id="ville"  name="ville" placeholder="Ville" #ville>
+        <input type="text" id="codepostal"  name="codepostal" placeholder="Code postal" #codepostal>
+        <input type="text" id="pays"  name="pays" placeholder="Pays" #pays>
+        <input type="text" id="adressetype" name="adressetype" placeholder="Type d'adresse" #adressetype>
+        <input type="submit"  value="Modifier" onclick="AddAdress(rue.value,ville.value,codepostal.value,pays.value,adressetype.value)">
+      </form>
+      
+    </div>
+  </div>
+  </ion-content>
+
+    <!-- Footer avec bordure Mobile -->
+    <ion-footer class="ion-no-border footer ion-hide-md-up">
+      <ion-toolbar>
+          <a href="/home"><img src="assets/img/icon/home-solid.svg" alt="home" width="25px"></a>
+          <a href="/search"><img src="assets/img/icon/search-solid.svg" alt="search" width="25px"></a>
+          <a href="/basket"><img src="assets/img/icon/shopping-basket-solid.svg" alt="basket" width="25px"></a>
+          <a href="/purchases"><img src="assets/img/icon/file-invoice-dollar-solid.svg" alt="purchases" width="25px"></a>
+          <a href="/account"><img src="assets/img/icon/user-regular.svg" alt="profile" width="25px"></a>
+      </ion-toolbar>
+    </ion-footer>
+  
+    <!-- Footer avec bordure Desktop -->
+    <ion-footer class="ion-no-border footer ion-hide-md-down">
+      <ion-toolbar>
+        <h6>Brox - Tous droits réservés ®</h6>
+      </ion-toolbar>
+    </ion-footer>

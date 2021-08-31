@@ -1,0 +1,89 @@
+ion-content{
+	--ion-background-color: #CEF0EA;
+}
+
+
+/* BASIC */
+
+ion-grid {
+	padding: 2px 2px;
+}
+
+.banniere {
+	background-color: #5CCFBB;
+	color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	height: 20vh;
+}
+
+a {
+	background-color: #5CCFBB;
+	text-decoration: none;
+	color: black;
+	padding: 10px 20px;
+	border-radius: 5px;
+	display:inline-block;
+	font-weight: 400;
+	transition: 0.5s;
+}
+
+input[type="submit"]{
+	background-color: #5CCFBB;
+}
+
+a:hover {
+	background-color: black;
+	color: #5CCFBB;
+}
+ion-footer a {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+ion-footer a:hover{
+	background-color: #fffbfb70;
+}
+
+
+/* STRUCTURE */
+
+.wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column; 
+	justify-content: center;
+	width: 100%;
+	height: auto;
+	padding: 20px;
+}
+	
+#formContent {
+	
+	background:  #CEF0EA;
+	width: 90%;
+	max-width: 450px;
+	position: relative;
+	text-align: center;
+	margin-top: 5px;
+}
+
+#p_ht, #p_ttc, #stock {
+	background-color: white;
+	border: none;
+	color: black;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 5px;
+	width: 85%;
+	border: 2px solid #f6f6f6;
+	transition: all 0.5s ease-in-out;
+	border-radius: 20px;
+		
+}

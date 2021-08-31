@@ -1,0 +1,79 @@
+<ion-content [fullscreen]="true">
+
+  <!-- Bannière -->
+  <div class="banniere">
+    <ion-grid>
+      <ion-row>
+        <ion-col >
+    <a (click)="backClicked()"><img src="/assets/img/icon/left-arrow.svg" alt=""></a>
+  </ion-col>
+    <ion-col>
+      <h1>Mes commandes</h1>
+  </ion-col>
+  </ion-row>
+  </ion-grid>  
+</div>
+
+  <!-- Liste des commandes -->
+
+  <ion-grid [fixed]="true">
+    <h2>Commande n° xxx du 05/01/2021</h2>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="6">
+        <div class="purchase">
+          Commande 1
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="detail-purchase">
+          <a href="">Détails</a>
+        </div>
+      </ion-col>
+    </ion-row>
+    <h2>Commande n° xxx du 28/12/2020</h2>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="6">
+        <div class="purchase">
+          Commande 2
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="detail-purchase">
+          <a href="">Détails</a>
+        </div>
+      </ion-col>
+    </ion-row>
+    <h2>Commande n° xxx du 10/12/2020</h2>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="6">
+        <div class="purchase">
+          Commande 3
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="detail-purchase">
+          <a href="">Détails</a>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+    <!-- Footer avec bordure Mobile -->
+    <ion-footer class="ion-no-border footer ion-hide-md-up">
+      <ion-toolbar>
+          <a href="/home"><img src="assets/img/icon/home-solid.svg" alt="home" width="25px"></a>
+          <a href="/search"><img src="assets/img/icon/search-solid.svg" alt="search" width="25px"></a>
+          <a href="/basket"><img src="assets/img/icon/shopping-basket-solid.svg" alt="basket" width="25px"></a>
+          <a href="/purchases"><img src="assets/img/icon/file-invoice-dollar-solid.svg" alt="purchases" width="25px"></a>
+          <a href="/account"><img src="assets/img/icon/user-regular.svg" alt="profile" width="25px"></a>
+      </ion-toolbar>
+    </ion-footer>
+  
+    <!-- Footer avec bordure Desktop -->
+    <ion-footer class="ion-no-border footer ion-hide-md-down">
+      <ion-toolbar>
+        <h6>Brox - Tous droits réservés ®</h6>
+      </ion-toolbar>
+    </ion-footer>

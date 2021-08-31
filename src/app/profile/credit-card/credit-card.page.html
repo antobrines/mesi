@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+    <!-- SEARCH BAR DESKTOP-->
+    <ion-toolbar class="ion-hide-md-down">
+      <ion-buttons slot="secondary">
+        <ion-button color="dark" href="/profile/menu">
+          <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+        </ion-button>
+        <ion-button color="dark">
+          <ion-icon slot="icon-only" name="search"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="primary">
+        <ion-button color="dark">
+          <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title><img class="brox-little" src="/assets/img/logos/logo-black-text.png" alt="Categories"></ion-title>
+    </ion-toolbar>
+    <!-- Bannière -->
+
+  <!-- Bannière -->
+
+  <div class="banniere">
+    <h1>Moyens de paiement</h1>
+  </div>
+
+  <div class="wrapper ">
+    <div id="formContent">
+
+      <h1 class="title">Gérer vos moyens de paiement ici</h1>
+
+      <!-- liste des cartes de crédit enregistrées -->
+      <ul>
+        <li><img src="assets/img/icon/visa.png" alt="card"> 1234 5896 4789 ***** <a href="profile/edit-card"> <img src="assets/img/icon/modify.png" alt="modify"></a> <a href="profile/delete-card"><img src="assets/img/icon/bin.png" alt="bin"></a></li>
+        <li><img src="assets/img/icon/visa.png" alt="card"> 1234 5896 4789 ***** <a href="profile/edit-card"> <img src="assets/img/icon/modify.png" alt="modify"></a> <a href="profile/delete-card"><img src="assets/img/icon/bin.png" alt="bin"></a></li>
+        <li><img src="assets/img/icon/visa.png" alt="card"> 1234 5896 4789 ***** <a href="profile/edit-card"> <img src="assets/img/icon/modify.png" alt="modify"></a> <a href="profile/delete-card"><img src="assets/img/icon/bin.png" alt="bin"></a></li>
+      </ul>
+    </div>
+  </div>
+  <a class="add-card"  href="profile/add-card" >Ajouter une carte</a>
+  </ion-content>
+
+    <!-- Footer avec bordure Mobile -->
+    <ion-footer class="ion-no-border footer ion-hide-md-up">
+      <ion-toolbar>
+          <a href="/home"><img src="assets/img/icon/home-solid.svg" alt="home" width="25px"></a>
+          <a href="/search"><img src="assets/img/icon/search-solid.svg" alt="search" width="25px"></a>
+          <a href="/basket"><img src="assets/img/icon/shopping-basket-solid.svg" alt="basket" width="25px"></a>
+          <a href="/purchases"><img src="assets/img/icon/file-invoice-dollar-solid.svg" alt="purchases" width="25px"></a>
+          <a href="/account"><img src="assets/img/icon/user-regular.svg" alt="profile" width="25px"></a>
+      </ion-toolbar>
+    </ion-footer>
+  
+    <!-- Footer avec bordure Desktop -->
+    <ion-footer class="ion-no-border footer ion-hide-md-down">
+      <ion-toolbar>
+        <h6>Brox - Tous droits réservés ®</h6>
+      </ion-toolbar>
+    </ion-footer>
+  

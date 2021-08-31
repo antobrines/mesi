@@ -1,0 +1,103 @@
+ion-content{
+    --ion-background-color: #CEF0EA;
+  }
+
+  .banniere {
+    background-color: #5CCFBB;
+    color: black;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	height: 20vh;
+}
+
+/* BASIC */
+
+html {
+  background-color: #56baed;
+}
+
+body {
+  height: 100vh;
+}
+
+h1{
+    font-size: 2em;
+}
+
+a {
+  color: black;
+  display:inline-block;
+  text-decoration: none;
+  font-weight: 400;
+  
+}
+
+ul {
+    padding: 0;
+    li {
+    font-size: 1.6em;
+    list-style-type: none;
+    margin-top: 5vh;
+        img{
+        margin-left: 10px;
+        width: 30px;
+        height: auto;
+        vertical-align: middle;
+        
+    }      
+}
+}
+
+.add-card{
+    background-color: #5CCFBB;
+    color: black;
+    padding: 4vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.5s;
+    font-size: larger;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.add-card:hover {
+    background-color: #39ace7;
+    color: black;
+}
+
+.title{
+    margin-bottom: 10vh;
+    font-size: 1.8em;
+}
+
+/* STRUCTURE */
+  
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 60%;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+#formContent {
+
+  background:  #CEF0EA;
+  
+  position: relative;
+  text-align: center;
+}
+
+
+

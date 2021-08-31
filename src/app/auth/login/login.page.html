@@ -1,0 +1,29 @@
+<ion-content>
+
+
+  <img src="assets/img/logos/logo-black.png" alt="BROX">
+
+
+  <div class="wrapper">
+    <div id="formContent">
+
+      <!-- Login Form -->
+      <form [formGroup]="form" (submit)="submit()">
+        <input type="text" id="login" name="login" placeholder="Email" formControlName="email">
+        <input type="password" id="password" name="login" placeholder="Mot de passe" formControlName="password">
+        <input type="submit" value="Connexion">
+      </form>
+
+      <!-- Remind Password -->
+      <div>
+        <a href="/forgot-password">Mot de passe oublié?</a>
+      </div>
+
+      <div id="inscription">
+        <a href="/registration">Inscription</a>
+      </div>
+
+    </div>
+  </div>
+
+</ion-content>

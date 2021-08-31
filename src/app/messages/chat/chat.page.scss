@@ -1,0 +1,63 @@
+ion-content,
+ion-grid {
+  --ion-background-color: #cef0ea;
+  color: black;
+}
+
+ion-grid {
+  padding: 20px;
+}
+
+.banniere {
+  background-color: #5ccfbb;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  height: 20vh;
+}
+
+.info-produit {
+  padding: 10px 20px;
+}
+
+.chat-info {
+  background-color: #8cddcf;
+  padding: 5px 10px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+}
+
+.message {
+  padding: 5px 10px;
+  margin: 10px 0;
+}
+
+.message p {
+  margin: 0;
+}
+
+.my-message {
+  background-color: #8cddcf;
+}
+
+.his-message {
+  text-align: right;
+}
+
+.chat {
+  height: 50vh;
+  overflow: scroll;
+}
+
+.send-message {
+  padding: 0 20px;
+}
+
+ion-input {
+  background-color: white;
+}

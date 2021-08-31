@@ -1,0 +1,45 @@
+ion-content,
+ion-grid {
+  --ion-background-color: #cef0ea;
+  color: black;
+}
+
+ion-grid {
+  padding: 40px 20px;
+}
+
+.banniere {
+  background-color: #5CCFBB;
+  color: black;
+  height: 20vh;
+    a img{
+        width: 30px;
+        height: auto;
+        margin-top: 10px;
+        }   
+}
+
+.ticket div {
+  background-color: #8cddcf;
+  padding: 20px;
+}
+
+.ticket a {
+  text-decoration: none;
+  color: black;
+}
+
+.button {
+  background-color: #8cddcf;
+  text-decoration: none;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 60px;
+  transition: 0.5s;
+}
+
+.button:hover {
+  background-color: black;
+  color: #8cddcf;
+}

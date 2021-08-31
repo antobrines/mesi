@@ -1,0 +1,53 @@
+ion-content{
+    --ion-background-color: #CEF0EA;
+  }
+
+  .banniere {
+    background-color: #5CCFBB;
+    color: black;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	height: 20vh;
+}
+
+.title{
+    margin-bottom: 8vh;
+    font-size: 1.8em;
+}
+
+/* BASIC */
+
+html {
+  background-color: #56baed;
+}
+
+body {
+  height: 100vh;
+}
+
+
+/* STRUCTURE */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 60%;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+#formContent {
+
+  background:  #CEF0EA;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  text-align: center;
+}
+

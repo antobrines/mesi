@@ -1,0 +1,64 @@
+ion-content, ion-grid {
+    --ion-background-color: #CEF0EA;
+    color: black;
+}
+
+ion-grid {
+    padding: 40px 20px;
+}
+
+.banniere {
+    background-color: #5CCFBB;
+    color: black;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	height: 20vh;
+}
+
+.product {
+    background-color: #5CCFBB;
+    padding: 10px;
+    margin-top: 5%;
+}
+
+.quantity {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.price {
+    display: flex;
+    justify-content: center;
+    margin-top: 30%;
+}
+
+
+ion-item {
+    width: 80px;
+    text-align: center;
+    color: black;
+    --padding-end: 0px;
+    --inner-padding-end: 0px;
+    --ion-item-background: transparent;
+}
+
+a:hover {
+    background-color: black;
+    color: #5CCFBB;
+}
+button{
+    margin-top: 10%;
+}
+
+button a{
+    color: black;
+}
+
+a img{
+color: white; 
+text-shadow: 2px 2px 4px #00ffff; 
+}

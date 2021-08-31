@@ -1,0 +1,54 @@
+ion-content,
+ion-grid {
+  --ion-background-color: #cef0ea;
+  color: black;
+}
+
+ion-grid {
+  padding: 40px 20px;
+}
+
+.banniere {
+  background-color: #5CCFBB;
+  color: black;
+  height: 20vh;
+    a img{
+        width: 30px;
+        height: auto;
+        margin-top: 10px;
+        }   
+}
+
+.ticket {
+  padding: 5px 10px;
+  margin: 10px 0;
+}
+
+.ticket p {
+  margin: 0;
+}
+
+.request {
+  background-color: #8cddcf;
+}
+
+.chat {
+  height: 63vh;
+  overflow-y: scroll;
+}
+
+.send-message {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  bottom: 70px;
+  padding-bottom: 0;
+}
+
+ion-input {
+  background-color: white;
+}
+
+ion-icon {
+  font-size: 30px;
+}

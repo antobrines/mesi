@@ -1,0 +1,87 @@
+ion-content, ion-grid {
+    --ion-background-color: #CEF0EA;
+    color: black;
+}
+
+ion-grid {
+    padding: 20px 20px;
+}
+
+.banniere {
+    background-color: #5CCFBB;
+    color: black;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	height: 20vh;
+
+}
+
+.purchase {
+    background-color: #5CCFBB;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.detail-purchase {
+    display: flex;
+    justify-content: center;
+}
+span {
+    font-weight : bold;
+}
+
+.detail-purchase a {
+    background-color: #5CCFBB;
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.detail-purchase a:hover {
+    background-color: black;
+    color: #5CCFBB;
+}
+
+.price {
+     margin-top: 1rem;
+     margin-left: 1rem;
+}
+
+/* bouttons */
+a {
+	background-color: #5CCFBB;
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 60px;
+    transition: 0.5s;
+}
+a:hover {
+    background-color: black;
+    color: #5CCFBB;
+}
+
+.btn {
+    justify-content: space-around;
+	display: flex;
+    text-transform : uppercase;
+}
+
+/* footer */
+ion-footer a {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+ion-footer a:hover {
+  background-color: #fffbfb70;
+}
+

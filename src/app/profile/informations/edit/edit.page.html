@@ -1,0 +1,61 @@
+<ion-content [fullscreen]="true">
+  <!-- SEARCH BAR DESKTOP-->
+  <ion-toolbar class="ion-hide-md-down">
+    <ion-buttons slot="secondary">
+      <ion-button color="dark" href="/profile/menu">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button color="dark">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title><img class="brox-little" src="/assets/img/logos/logo-black-text.png" alt="Categories"></ion-title>
+  </ion-toolbar>
+  <!-- Bannière -->
+
+  <!-- Bannière -->
+
+  <div class="banniere">
+    <h1>Modification du profil</h1>
+  </div>
+
+  <div class="wrapper ">
+    <div id="formContent">
+
+      <p>{{message}}</p>
+      <!-- Modifier ses infos Form -->
+      <form [formGroup]="form" (submit)="submit()">
+        <input type="text" id="nom" name="last_name" placeholder="Nom" formControlName="last_name">
+        <input type="text" id="prenom" name="first_name" placeholder="Prénom" formControlName="first_name">
+        <input type="email" id="email" name="email" placeholder="Email" formControlName="email">
+        <input type="text" id="telephone" name="phone_number" placeholder="Téléphone" formControlName="phone_number">
+        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" formControlName="image">
+        <input type="submit" value="Modifier">
+      </form>
+
+    </div>
+  </div>
+</ion-content>
+
+    <!-- Footer avec bordure Mobile -->
+    <ion-footer class="ion-no-border footer ion-hide-md-up">
+      <ion-toolbar>
+          <a href="/home"><img src="assets/img/icon/home-solid.svg" alt="home" width="25px"></a>
+          <a href="/search"><img src="assets/img/icon/search-solid.svg" alt="search" width="25px"></a>
+          <a href="/basket"><img src="assets/img/icon/shopping-basket-solid.svg" alt="basket" width="25px"></a>
+          <a href="/purchases"><img src="assets/img/icon/file-invoice-dollar-solid.svg" alt="purchases" width="25px"></a>
+          <a href="/account"><img src="assets/img/icon/user-regular.svg" alt="profile" width="25px"></a>
+      </ion-toolbar>
+    </ion-footer>
+  
+    <!-- Footer avec bordure Desktop -->
+    <ion-footer class="ion-no-border footer ion-hide-md-down">
+      <ion-toolbar>
+        <h6>Brox - Tous droits réservés ®</h6>
+      </ion-toolbar>
+    </ion-footer>
