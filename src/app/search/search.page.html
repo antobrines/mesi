@@ -24,22 +24,6 @@
     <ion-title><img class="brox-little" src="/assets/img/logos/logo-black-text.png" alt="Categories"></ion-title>
   </ion-toolbar>
 
-<!-- recherche -->
-<!-- <ion-grid>
-    <ion-row class=""  
-    infinite-scroll  
-    [scrollWindow]="false"
-    (scrolled)="onScrollDown($event)" 
-    (scrolledUp)="onScrollUp($event)">
-      
-      <ion-col size="6" size-md="3" *ngFor="let item of listArray">
-        <h3 class="ion-text-center">{{item.name}}</h3>
-        <a [routerLink]="['/search-cat/', item.id]">
-        <div class="card"><img src="{{item.product_image}}" alt="{{item.name}}" max-width="600px" height="auto"></div>
-      </a>
-      </ion-col>
-    </ion-row>
-  </ion-grid> -->
 
   <!--test inifnite scrollbar-->
   <div class="search-results-container" infinite-scroll [scrollWindow]="false" (scrolled)="onScrollDown($event)"
@@ -55,7 +39,6 @@
     </ion-col>
     </ion-row>
     </ion-grid>
-
 </div>
 
 <!-- Carrés catégories -->
