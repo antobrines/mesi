@@ -6,6 +6,7 @@ Avoir npm d'installé
 
 ## Lancement du projet
 
+- Installer angular : npm install -g @angular/cli
 - Dans le projet, lancer la commande 'npm install'
 - Démarrer l'application : ionic serve
 
