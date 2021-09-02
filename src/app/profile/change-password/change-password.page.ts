@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-change-password',
@@ -7,14 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChangePasswordPage implements OnInit {
 
-  constructor() { }
+  constructor(private _location: Location)  { }
 
   ngOnInit() {
   }
 
   UpdatePassword(oldpassword, confirmoldpassword, newpassword){
     const body = {
-      
     }
+  }
+
+  backClicked() {
+    this._location.back();
   }
 }

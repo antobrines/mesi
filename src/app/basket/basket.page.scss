@@ -10,12 +10,12 @@ ion-grid {
 .banniere {
     background-color: #5CCFBB;
     color: black;
-    display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	flex-direction: column;
 	height: 20vh;
+    a img{
+        width: 30px;
+        height: auto;
+        margin-top: 10px;
+    }   
 }
 
 .product {
@@ -46,10 +46,6 @@ ion-item {
     --ion-item-background: transparent;
 }
 
-a:hover {
-    background-color: black;
-    color: #5CCFBB;
-}
 button{
     margin-top: 10%;
 }
@@ -65,4 +61,8 @@ a {
 a img{
 color: white; 
 text-shadow: 2px 2px 4px #00ffff; 
+}
+
+ion-content {
+    min-height: 80%;
 }

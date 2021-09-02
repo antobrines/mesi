@@ -1,6 +1,7 @@
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-edit',
@@ -12,7 +13,7 @@ export class EditPage implements OnInit {
   public message = '';
   public user;
   public form: FormGroup;
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient,private _location: Location) { }
 
   ngOnInit() {
     this.getUserInformation();
@@ -58,5 +59,9 @@ export class EditPage implements OnInit {
       this.updateForm(result.data);
       this.message = result.message;
     });
+  }
+
+  backClicked() {
+    this._location.back();
   }
 }

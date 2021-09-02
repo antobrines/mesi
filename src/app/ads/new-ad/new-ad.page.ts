@@ -44,9 +44,14 @@ export class NewAdPage implements OnInit {
     formData.append('price_ht', this.myForm.get('price_ht').value);
     formData.append('product_image', this.myForm.get('product_image').value);
     console.log(formData);
-    this.httpClient.post('http://mesiback/new/product', formData, { headers }).subscribe((result: any) => {    
-      console.log(result);
-    });
+    this.httpClient.post<any>('http://127.0.0.1:8000/new/product', formData, { headers }).subscribe( 
+      (result: any) => {
+        this.router.navigate(['/ads-list']);
+      },
+      error => {
+        (err) => console.log(err)
+      }
+    );
   }
 
 }

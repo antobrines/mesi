@@ -3,10 +3,18 @@
 
 
 	<!-- Bannière -->
-
 	<div class="banniere">
-		<h1>Gérer mes annonces</h1>
-	</div>
+		<ion-grid>
+			<ion-row>
+				<ion-col>
+					<a (click)="backClicked()"><img src="/assets/img/icon/left-arrow.svg" alt=""></a>
+				</ion-col>
+				<ion-col>
+					<h1>Mes annonces</h1>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		</div>
   
 	<!-- Bouton ajout d'annonce -->
 
@@ -52,7 +60,7 @@
 		<a href="../search"><img src="assets/img/icon/search-solid.svg" alt="search" width="25px"></a>
 		<a href="../basket"><img src="assets/img/icon/shopping-basket-solid.svg" alt="basket" width="25px"></a>
 		<a href="../purchases"><img src="assets/img/icon/file-invoice-dollar-solid.svg" alt="purchases" width="25px"></a>
-		<a href="../profile/informations"><img src="assets/img/icon/user-regular.svg" alt="profile" width="25px"></a>
+		<a href="../account"><img src="assets/img/icon/user-regular.svg" alt="profile" width="25px"></a>
 	</ion-toolbar>
 </ion-footer>
 

@@ -3,8 +3,17 @@
   <!-- Bannière -->
 
   <div class="banniere">
-    <h1>Mon Panier</h1>
-  </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <a (click)="backClicked()"><img src="/assets/img/icon/left-arrow.svg" alt=""></a>
+        </ion-col>
+        <ion-col>
+          <h1>Mon panier</h1>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    </div>
 
   <h2 *ngIf="basket==null">Il n'y a pas de produits dans votre panier</h2>
   

@@ -2,15 +2,19 @@ ion-content{
     --ion-background-color: #CEF0EA;
   }
 
-  .banniere {
+  ion-grid {
+    padding: 40px 20px;
+}
+
+.banniere {
     background-color: #5CCFBB;
     color: black;
-    display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	flex-direction: column;
 	height: 20vh;
+    a img{
+        width: 30px;
+        height: auto;
+        margin-top: 10px;
+    }   
 }
 
 /* BASIC */
@@ -21,10 +25,6 @@ html {
 
 body {
   height: 100vh;
-}
-
-h1{
-    font-size: 2em;
 }
 
 a {

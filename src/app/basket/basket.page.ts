@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BasketService } from '../services/basket.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-basket',
@@ -11,11 +12,16 @@ export class BasketPage implements OnInit {
   basketSold = [];
   total = 0;
   values = [];
-  constructor(public basketS: BasketService) { }
+  constructor(public basketS: BasketService, private _location: Location) { }
 
   ngOnInit() {
     this.updateData();
   }
+
+  backClicked() {
+    this._location.back();
+  }
+
 
   updateData(){
     const basketAll= this.basketS.getBasket();

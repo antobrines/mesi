@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-edit-card',
@@ -7,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditCardPage implements OnInit {
 
-  constructor() { }
+  constructor(private _location: Location)  { }
 
   ngOnInit() {
   }
 
+  backClicked() {
+    this._location.back();
+  }
     
   EditCard(cardnumber, expirationdate, codecvv){
     const body = {

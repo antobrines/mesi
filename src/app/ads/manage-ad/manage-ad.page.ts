@@ -35,7 +35,7 @@ export class ManageAdPage implements OnInit {
   }
 
   getProduct() {
-    this.http.get('http://mesiback/product/' + this.product_id).subscribe((datas: any) => {
+    this.http.get('http://127.0.0.1:8080/product/' + this.product_id).subscribe((datas: any) => {
       this.product = datas.data;
       this.updateForm(datas.data);
     });

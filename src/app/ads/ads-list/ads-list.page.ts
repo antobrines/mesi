@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-ads-list',
@@ -10,10 +11,14 @@ import { ActivatedRoute } from '@angular/router';
 export class AdsListPage implements OnInit {
   public products = null;
   
-  constructor(private http: HttpClient,private actRoute: ActivatedRoute) {}
+  constructor(private http: HttpClient,private actRoute: ActivatedRoute, private _location: Location) {}
 
   ngOnInit() {
     this.getProducts();
+  }
+
+  backClicked() {
+    this._location.back();
   }
 
   getProducts() {
@@ -26,7 +31,7 @@ export class AdsListPage implements OnInit {
       headers: new HttpHeaders(header),
     };
 
-    this.http.get('http://mesiback/userads', requestOptions).subscribe(
+    this.http.get('http://127.0.0.1:8080/userads', requestOptions).subscribe(
       (data:any) => {
         this.products = data.data;
       }

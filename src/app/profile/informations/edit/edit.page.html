@@ -16,17 +16,23 @@
     </ion-buttons>
     <ion-title><img class="brox-little" src="/assets/img/logos/logo-black-text.png" alt="Categories"></ion-title>
   </ion-toolbar>
-  <!-- Bannière -->
 
   <!-- Bannière -->
-
   <div class="banniere">
-    <h1>Modification du profil</h1>
-  </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <a (click)="backClicked()"><img src="/assets/img/icon/left-arrow.svg" alt=""></a>
+        </ion-col>
+        <ion-col>
+      <h1>Modification du profil</h1>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+</div>
 
   <div class="wrapper ">
     <div id="formContent">
-
       <p>{{message}}</p>
       <!-- Modifier ses infos Form -->
       <form [formGroup]="form" (submit)="submit()">
