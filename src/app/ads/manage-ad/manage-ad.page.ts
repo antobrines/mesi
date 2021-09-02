@@ -5,6 +5,7 @@ import {Location} from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-manage-ad',
   templateUrl: './manage-ad.page.html',
@@ -34,8 +35,12 @@ export class ManageAdPage implements OnInit {
 
   }
 
+    backClicked() {
+    this._location.back();
+  }
+
   getProduct() {
-    this.http.get('http://127.0.0.1:8080/product/' + this.product_id).subscribe((datas: any) => {
+    this.http.get('http://127.0.0.1:8000/product/' + this.product_id).subscribe((datas: any) => {
       this.product = datas.data;
       this.updateForm(datas.data);
     });
@@ -62,7 +67,7 @@ export class ManageAdPage implements OnInit {
   onSubmit() {
     const headers = { Authorization: 'Bearer ' + localStorage.getItem('token') };
     const body = this.form.getRawValue();
-    this.http.post('http://mesiback/product/' + this.product_id, body, { headers }).subscribe((result: any) => {
+    this.http.post('http://127.0.0.1:8000/product/' + this.product_id, body, { headers }).subscribe((result: any) => {
       this.updateForm(result.data);
       this.message = result.message;
     });
@@ -70,7 +75,7 @@ export class ManageAdPage implements OnInit {
 
   deleteAd() {
     const headers = { Authorization: 'Bearer ' + localStorage.getItem('token') };
-    this.http.delete('http://mesiback/product/' + this.product_id, { headers }).subscribe((result: any) => {
+    this.http.delete('http://127.0.0.1:8000/product/' + this.product_id, { headers }).subscribe((result: any) => {
       console.log(result);
       this.router.navigate(['/ads-list']);
     });

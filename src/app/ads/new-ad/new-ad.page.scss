@@ -2,11 +2,24 @@ ion-content {
   --ion-background-color: #cef0ea;
 }
 
+ion-grid {
+  padding: 40px 20px;
+}
+
+.banniere {
+  background-color: #5CCFBB;
+  color: black;
+height: 20vh;
+  a img{
+      width: 30px;
+      height: auto;
+      margin-top: 10px;
+  }   
+}
+
 /* BASIC */
 
-ion-grid {
-  padding: 2px 2px;
-}
+
 
 .banniere {
   background-color: #5ccfbb;

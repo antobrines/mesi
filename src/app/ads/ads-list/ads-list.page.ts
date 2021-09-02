@@ -31,7 +31,7 @@ export class AdsListPage implements OnInit {
       headers: new HttpHeaders(header),
     };
 
-    this.http.get('http://127.0.0.1:8080/userads', requestOptions).subscribe(
+    this.http.get('http://127.0.0.1:8000/userads', requestOptions).subscribe(
       (data:any) => {
         this.products = data.data;
       }
