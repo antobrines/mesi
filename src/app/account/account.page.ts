@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountPage implements OnInit {
 
-  constructor() { }
+  userClaims: any;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+
+  }
+
+  Logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 
 }
